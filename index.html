@@ -1,11 +1,63 @@
-<!DOCTYPE html >
-<html>
-<head>
-    <title></title>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Tatiana</title>
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/loading.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="homepage">
+		<div id="ip-container" class="ip-container">
+			<!-- initial header -->
+			<header class="ip-header">
+				<h1 class="ip-logo">
+					<svg class="ip-inner" width="100%" height="100%" viewBox="0 0 300 160" preserveAspectRatio="xMidYMin meet" aria-labelledby="logo_title">
+						<g>
+							<path d="M272.3,83.6H23.7v-63h248.5V83.6z M27.7,79.7h240.6V24.5H27.7V79.7z"/>
+						</g>
+						<g>
+							<path d="M55.7,45.8h-4.2c-0.3,0-0.6-0.3-0.6-0.6V42c0-0.3,0.2-0.6,0.6-0.6h13.1c0.3,0,0.6,0.3,0.6,0.6v3.2c0,0.3-0.2,0.6-0.6,0.6
+								h-4.2v15.8c0,0.3-0.3,0.6-0.6,0.6h-3.5c-0.3,0-0.6-0.3-0.6-0.6V45.8z"/>
+							<path d="M76.8,61.3L86,41.4c0.1-0.2,0.3-0.3,0.5-0.3h0.3c0.2,0,0.4,0.1,0.5,0.3l9.2,19.9c0.2,0.4-0.1,0.8-0.5,0.8h-3.3
+								c-0.5,0-0.8-0.2-1-0.7L90.7,59h-8l-1.1,2.4c-0.1,0.4-0.5,0.7-1.1,0.7h-3.3C76.8,62.1,76.6,61.7,76.8,61.3z M88.9,55l-2.2-4.9h0
+								L84.4,55H88.9z"/>
+							<path d="M113,45.8h-4.2c-0.3,0-0.6-0.3-0.6-0.6V42c0-0.3,0.2-0.6,0.6-0.6h13.1c0.3,0,0.6,0.3,0.6,0.6v3.2c0,0.3-0.2,0.6-0.6,0.6
+								h-4.2v15.8c0,0.3-0.3,0.6-0.6,0.6h-3.5c-0.3,0-0.6-0.3-0.6-0.6V45.8z"/>
+							<path d="M137.8,42c0-0.3,0.3-0.6,0.6-0.6h3.5c0.3,0,0.6,0.3,0.6,0.6v19.6c0,0.3-0.3,0.6-0.6,0.6h-3.5c-0.3,0-0.6-0.3-0.6-0.6V42z"
+								/>
+							<path d="M157.3,61.3l9.2-19.9c0.1-0.2,0.3-0.3,0.5-0.3h0.3c0.2,0,0.4,0.1,0.5,0.3l9.2,19.9c0.2,0.4-0.1,0.8-0.5,0.8h-3.3
+								c-0.5,0-0.8-0.2-1-0.7l-1.1-2.3h-8l-1.1,2.4c-0.1,0.4-0.5,0.7-1.1,0.7h-3.3C157.4,62.1,157.2,61.7,157.3,61.3z M169.5,55l-2.2-4.9
+								h0L165,55H169.5z"/>
+							<path d="M191.9,41.6c0-0.3,0.3-0.5,0.6-0.5h0.7L205,52.5h0V42c0-0.3,0.2-0.6,0.6-0.6h3.5c0.3,0,0.6,0.3,0.6,0.6v19.9
+								c0,0.3-0.3,0.5-0.6,0.5h-0.5c-0.1,0-0.3-0.1-0.4-0.1l-11.7-11.7h0v11c0,0.3-0.2,0.6-0.6,0.6h-3.5c-0.3,0-0.6-0.3-0.6-0.6
+								L191.9,41.6z"/>
+							<path d="M224.6,61.3l9.2-19.9c0.1-0.2,0.3-0.3,0.5-0.3h0.3c0.2,0,0.4,0.1,0.5,0.3l9.2,19.9c0.2,0.4-0.1,0.8-0.5,0.8h-3.3
+								c-0.5,0-0.8-0.2-1-0.7l-1.1-2.3h-8l-1.1,2.4c-0.1,0.4-0.5,0.7-1.1,0.7h-3.3C224.6,62.1,224.4,61.7,224.6,61.3z M236.7,55l-2.2-4.9
+								h0l-2.2,4.9H236.7z"/>
+						</g>
+						</svg>
+				</h1>
+				<div class="ip-loader">
+					<svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+						<path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+						<path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+					</svg>
+				</div>
+			</header>
+			<!-- main content -->
+			<div class='main-content limiter center margin-top4'>
+				
+			<p>Coming soon</p>
 
-</head>
-<body>
-<h1>Tatiana</h1>
 
-</body>
+			</div>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/pathLoader.js"></script>
+		<script src="js/main.js"></script>
+	</body>
 </html>
