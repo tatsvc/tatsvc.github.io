@@ -77,6 +77,11 @@
 	transform-origin: top left;
 }
 
+.grid.swipe-right .curtain::after,
+.grid.swipe-rotate .curtain::after {
+	left: -100%;
+}
+
 .grid.swipe-down .curtain::after {
 	top: -100%;
 }
@@ -84,7 +89,6 @@
 
 /* Animations */
 
-/* Swipe down */
 .grid.swipe-down li.animate .curtain {
 	-webkit-animation: swipeDown 1.5s cubic-bezier(0.6,0,0.4,1) forwards;
 	animation: swipeDown 1.5s cubic-bezier(0.6,0,0.4,1) forwards;
@@ -100,6 +104,24 @@
 	0% {}
 	50%, 60% { -webkit-transform: translate(0); transform: translate(0); }
 	100% { transform: translate3d(0,100%,0); transform: translate3d(0,100%,0); }
+}
+
+.grid li.animate .curtain::after {
+	-webkit-animation: fadeOut 1.5s ease forwards;
+	animation: fadeOut 1.5s ease forwards;
+	-webkit-animation-delay: inherit;
+	animation-delay: inherit;
+}
+
+@-webkit-keyframes fadeOut {
+	50%, 60% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@keyframes fadeOut {
+	0% {}
+	50%, 60% { opacity: 1; }
+	100% { opacity: 0; }
 }
 
 .js .grid li img,
@@ -127,4 +149,3 @@
 .grid li.shown h3 {
 	visibility: visible;
 }
-
