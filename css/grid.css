@@ -77,11 +77,6 @@
 	transform-origin: top left;
 }
 
-.grid.swipe-right .curtain::after,
-.grid.swipe-rotate .curtain::after {
-	left: -100%;
-}
-
 .grid.swipe-down .curtain::after {
 	top: -100%;
 }
