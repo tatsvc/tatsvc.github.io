@@ -11,7 +11,23 @@
 	font-size: 16px;
 	border-bottom: 2px solid white;
 }
+.menu h3 {
+	font-size: 16px;
+	opacity: .8;
+	line-height: 28px;
+}
 
+.menu h3 a {
+	color: #8383c4;
+}
+
+.menu h3 a:hover {
+	opacity: .5;
+}
+
+.subnav {
+	height: 10px;
+}
 .content {
 	position: relative;
 	background: #b4bad2;
@@ -35,8 +51,8 @@
 
 /* Menu Button */
 .menu-button {
-	position: fixed;
-	top: 20px;
+	position: absolute;
+	top: 60px;
 	left: 20px;
 	margin: 1em;
 	padding: 0;
@@ -45,6 +61,9 @@
 	border: none;
 	font-size: 1.5em;
 	cursor: pointer;
+}
+a.menu-button {
+	color: #ee595d;
 }
 
 .menu-button:hover {
@@ -89,10 +108,8 @@
 	padding: 2em 1em;
 }
 
-/*.icon-list {
-	width: 280px;
-}*/
 
+/*
 .icon-list a {
 	display: block;
 	padding: 0.8em;
@@ -106,7 +123,7 @@
 	margin-left: 10px;
 	font-weight: 700;
 	font-size: 0.75em;
-}
+}*/
 
 .close-button i {
 	display: block;
@@ -144,6 +161,10 @@
 }
 
 .show-menu .page-container {
+	margin-left: 700px;
+}
+
+.show-menu .cs-skin-circular {
 	margin-left: 700px;
 }
 body.show-menu  {
