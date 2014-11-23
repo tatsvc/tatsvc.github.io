@@ -115,7 +115,7 @@
 }
 
 .icon-list a i {
-	opacity: 0.5;
+	opacity: 0.8;
 }
 
 .icon-list a span {
@@ -140,13 +140,15 @@
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
-/*
-.show-menu .main-content {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
-	-webkit-transition-timing-function: ease-in;
-    transition-timing-function: ease-in;
-	-webkit-transform: translate3d(300px,0,0);
-	transform: translate3d(300px,0,0);
+
+.page-container {
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  margin-left: 0px;
 }
-*/
+
+.show-menu .page-container {
+	margin-left: 400px;
+}

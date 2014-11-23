@@ -10,7 +10,7 @@
 
 
 	var bodyEl = document.body,
-		content = document.querySelector( '.main-content' ),
+		content = document.querySelector( '.page-container' ),
 		openbtn = document.getElementById( 'open-button' ),
 		closebtn = document.getElementById( 'close-button' ),
 		isOpen = false,
