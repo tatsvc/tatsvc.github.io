@@ -86,7 +86,7 @@
 		// } ).getMostProminentColor( this.image );
 		// if( rgb.r && rgb.g && rgb.b ) {
 			// this.curtain.style.background = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
-		this.curtain.style.background = 'rgb(218, 229, 236)';
+		this.curtain.style.background = 'rgb(236, 236, 236)';
 		// }
 		this.anchor.appendChild( this.curtain );
 	}
