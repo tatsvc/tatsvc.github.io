@@ -53,7 +53,6 @@
 			var progress = 0,
 				interval = setInterval( function() {
 					progress = Math.min( progress + Math.random() * 0.1, 1 );
-
 					instance.setProgress( progress );
 
 					// reached the end
@@ -79,7 +78,7 @@
 							onEndHeaderAnimation();
 						}
 					}
-				}, 80 );
+				}, 70 );
 		};
 
 		loader.setProgressFn( simulationFn );

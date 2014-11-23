@@ -97,10 +97,20 @@ body {
   	-webkit-font-smoothing:antialiased;
 }
 
+body .dark {
+  color: #fff;
+}
+
 a {
 	color: #f0f0f0;
 	text-decoration: none;
 	outline: none;
+}
+
+body .dark .a {
+  color: #3c73fa;
+  text-decoration: none;
+  outline: none;
 }
 
 /* Brandon  */
