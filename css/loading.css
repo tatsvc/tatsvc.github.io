@@ -140,12 +140,10 @@
 	to { -webkit-transform: translate3d(0,-100%,0); transform: translate3d(0,-100%,0); }
 }
 
-/* Change layout class for header */
 .layout-switch .ip-header {
 	position: absolute;
 }
 
-/* No JS */
 .no-js .ip-header {
 	position: relative;
 	min-height: 0px;
@@ -162,8 +160,6 @@
 .no-js .ip-header .ip-logo svg path {
 	fill: #fff;
 }
-
-/* Media queries */
 
 @media screen and (max-width: 45em) {
 

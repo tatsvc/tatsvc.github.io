@@ -6,21 +6,47 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<title>Tatiana</title>
 		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/helper.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/loading.css" />
-		<script src="js/modernizr.custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/loading.css" />	
+		<link rel="stylesheet" type="text/css" href="css/grid.css" />
+		<link rel="stylesheet" type="text/css" href="css/social.css" />
+		<script src="js/modernizr.custom.js"></script>	
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<script src="js/snap.svg-min.js"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	</head>
 	<body class="homepage">
+	<div class="menu-wrap">
+				<nav class="menu">
+					<div class="icon-list">
+						<a href="https://dribbble.com/tats"><i class="fa fa-fw fa-dribbble"></i><span>Dribbble</span></a>
+						<a href="https://twitter.com/tatsvc"><i class="fa fa-fw fa-twitter"></i><span>Twitter</span></a>
+						<a href="https://vimeo.com/tatsvc/"><i class="fa fa-fw fa-vimeo-square "></i><span>Vimeo</span></a>
+						<a href="instagram.com/zatiana"><i class="fa fa-fw fa-instagram"></i><span>Instagram</span></a>
+						<a href="mailto:tatiana.van.campenhout@gmail.com"><i class="fa fa-fw fa-paper-plane"></i><span>Email</span></a>
+					</div>
+				</nav>
+				<button class="close-button" id="close-button">Close Menu</button>
+				<div class="morph-shape" id="morph-shape" data-morph-open="M-1,0h101c0,0,0-1,0,395c0,404,0,405,0,405H-1V0z">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+						<path d="M-1,0h101c0,0-97.833,153.603-97.833,396.167C2.167,627.579,100,800,100,800H-1V0z"/>
+					</svg>
+				</div>
+			</div>
+			<a class="menu-button" id="open-button"><i class="fa fa-fw fa-paw"></i></a>	
+
+	<div class='page-container'>
+	<div class="content-wrap">
 		<div id="ip-container" class="ip-container">
 			<!-- initial header -->
 			<header class="ip-header">
 				<h1 class="ip-logo">
 					<svg class="ip-inner" width="100%" height="100%" viewBox="0 0 300 160" preserveAspectRatio="xMidYMin meet" aria-labelledby="logo_title">
-						<g>
-							<path d="M272.3,83.6H23.7v-63h248.5V83.6z M27.7,79.7h240.6V24.5H27.7V79.7z"/>
-						</g>
-						<g>
-							<path d="M55.7,45.8h-4.2c-0.3,0-0.6-0.3-0.6-0.6V42c0-0.3,0.2-0.6,0.6-0.6h13.1c0.3,0,0.6,0.3,0.6,0.6v3.2c0,0.3-0.2,0.6-0.6,0.6
+						<g><path d="M272.3,83.6H23.7v-63h248.5V83.6z M27.7,79.7h240.6V24.5H27.7V79.7z"/></g>
+						<g><path d="M55.7,45.8h-4.2c-0.3,0-0.6-0.3-0.6-0.6V42c0-0.3,0.2-0.6,0.6-0.6h13.1c0.3,0,0.6,0.3,0.6,0.6v3.2c0,0.3-0.2,0.6-0.6,0.6
 								h-4.2v15.8c0,0.3-0.3,0.6-0.6,0.6h-3.5c-0.3,0-0.6-0.3-0.6-0.6V45.8z"/>
 							<path d="M76.8,61.3L86,41.4c0.1-0.2,0.3-0.3,0.5-0.3h0.3c0.2,0,0.4,0.1,0.5,0.3l9.2,19.9c0.2,0.4-0.1,0.8-0.5,0.8h-3.3
 								c-0.5,0-0.8-0.2-1-0.7L90.7,59h-8l-1.1,2.4c-0.1,0.4-0.5,0.7-1.1,0.7h-3.3C76.8,62.1,76.6,61.7,76.8,61.3z M88.9,55l-2.2-4.9h0
@@ -39,25 +65,72 @@
 								c-0.5,0-0.8-0.2-1-0.7l-1.1-2.3h-8l-1.1,2.4c-0.1,0.4-0.5,0.7-1.1,0.7h-3.3C224.6,62.1,224.4,61.7,224.6,61.3z M236.7,55l-2.2-4.9
 								h0l-2.2,4.9H236.7z"/>
 						</g>
-						</svg>
+					</svg>
 				</h1>
+
 				<div class="ip-loader">
-					<svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+					<svg class="ip-inner" width="80px" height="80px" viewBox="0 0 80 80">
 						<path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
 						<path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
 					</svg>
 				</div>
 			</header>
+
 			<!-- main content -->
-			<div class='main-content limiter center margin-top4'>
-				
-			<p>Coming soon</p>
-
-
+			<div class='main-content limiter center margin-top4'>	
+			<section class="grid-wrap">
+				<ul class="grid swipe-down" id="grid">
+	
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy3.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy4.png" alt="dummy"></a></li>	
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy2.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy2.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy3.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy4.png" alt="dummy"></a></li>		
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy2.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy3.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy2.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy3.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy4.png" alt="dummy"></a></li>		
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy3.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy4.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy2.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy3.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy4.png" alt="dummy"></a></li>		
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy2.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy3.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy2.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy3.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy4.png" alt="dummy"></a></li>		
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy3.png" alt="dummy"></a></li>
+					<li class='column4 padding1'><a href="#"><img width='100%' src="img/dummy4.png" alt="dummy"></a></li>
+					
+				</ul>
+			</section>
 			</div>
-		</div><!-- /container -->
+	</div><!-- /ip-container -->
+	</div>	
+</div>
+			
+
 		<script src="js/classie.js"></script>
 		<script src="js/pathLoader.js"></script>
 		<script src="js/main.js"></script>
+
+		<script src="js/masonry.pkgd.min.js"></script>
+		<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/colorfinder-1.1.js"></script>
+		<script src="js/gridScrollFx.js"></script>
+		<script>
+			new GridScrollFx( document.getElementById( 'grid' ), {
+				viewportFactor : 0.4
+			} );
+		</script>
 	</body>
 </html>
