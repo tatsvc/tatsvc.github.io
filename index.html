@@ -22,17 +22,14 @@
 	<body class="homepage">
 	<div class="menu-wrap">
 				<nav class="menu">
-					<div class="padding4x">
+					<div class="margin2 margin-top2">
 						<h2 class="dark brandon">About me</h2>
 						<div class="icon-list column12 margin-top2">
-						<h3 class="dark brandon about-me">Belgian ✈ designer working at <a href='www.mapbox.com'>Mapbox</a>. Proud coffee junkie. No sense of orientation. Certified Instagram addict. Unable to type with boxing gloves on.
-						</h3>
-							<!-- <a class='column6' href="https://dribbble.com/tats"><i class="fa fa-fw fa-dribbble"></i><span>Dribbble</span></a>
-							<a class='column6' href="https://twitter.com/tatsvc"><i class="fa fa-fw fa-twitter"></i><span>Twitter</span></a>
-							<a class='column6' href="https://vimeo.com/tatsvc/"><i class="fa fa-fw fa-vimeo-square "></i><span>Vimeo</span></a>
-							<a class='column6' href="instagram.com/zatiana"><i class="fa fa-fw fa-instagram"></i><span>Instagram</span></a>
-							<a class='column6' href="https://www.linkedin.com/pub/tatiana-van-campenhout/2a/149/916"><i class="fa fa-fw fa-linkedin"></i><span>Linkedin</span></a>
-							<a class='column6' href="mailto:tatiana.van.campenhout@gmail.com"><i class="fa fa-fw fa-paper-plane"></i><span>Email</span></a> -->
+							<h3 class="dark brandon about-me">Belgian ✈ designer working at <a href='www.mapbox.com'>Mapbox</a>.</h3>
+							<h3 class="dark brandon about-me">Proud coffee junkie. </h3>
+							<h3 class="dark brandon about-me">No sense of orientation.</h3>
+							<h3 class="dark brandon about-me">Certified <a href='www.instagram.com/zatiana'>Instagram </a>addict.</h3>
+							<h3 class="dark brandon about-me">Unable to type with boxing gloves on.</h3>
 						</div>
 					</div>	
 				</nav>
@@ -46,17 +43,18 @@
 			</div>
 
 
+
 	<div class='page-container'>
 		<div class="limiter contain subnav">
 			<a class="menu-button" id="open-button"><i class="fa fa-fw fa-anchor"></i></a>	
 
 				<select class="cs-select cs-skin-circular">
 					<option value="" disabled selected></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
+					<option value="1" data-link="http://www.dribbble.com/tats">1</option>
+					<option value="2" data-link="https://twitter.com/tatsvc">2</option>
+					<option value="3" data-link="https://vimeo.com/tatsvc/">3</option>
+					<option value="4" data-link="http://www.github.com/tatsvc">4</option>
+					<option value="5" data-link="https://www.flickr.com/photos/125973054@N08/">5</option>
 				</select>
 		</div>
 	<div class="content-wrap">
@@ -146,7 +144,9 @@
 		<script src="js/gridScrollFx.js"></script>
 		<script>
 			new GridScrollFx( document.getElementById( 'grid' ), {
-				viewportFactor : 0.4
+				   minDelay : 0,
+				   maxDelay : 500,
+				   viewportFactor : 0.6
 			} );
 		</script>
 			<script src="js/selectFx.js"></script>

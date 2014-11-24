@@ -143,6 +143,9 @@
 .layout-switch .ip-header {
 	position: absolute;
 }
+.layout-switch .ip-header {
+	background: transparent;
+}
 
 .no-js .ip-header {
 	position: relative;

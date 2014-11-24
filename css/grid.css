@@ -47,6 +47,19 @@
 	margin: 7px;
 }
 
+.grid li.shown img { 
+	-ms-transition: all .2s ease-in-out; 
+	-moz-transition: all .2s ease-in-out; 
+	-webkit-transition: all .2s ease-in-out; 
+	transition: all .2s ease-in-out; 
+}
+.grid li.shown img:hover { 
+	-ms-transform: scale(1.1); 
+	-moz-transform: scale(1.1); 
+	-webkt-transform: scale(1.1); 
+	transform: scale(1.1); 
+}
+
 /* Curtain element */
 .grid .curtain {
 	position: absolute;
@@ -149,3 +162,4 @@
 .grid li.shown h3 {
 	visibility: visible;
 }
+

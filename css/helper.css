@@ -97,6 +97,10 @@ body {
   	-webkit-font-smoothing:antialiased;
 }
 
+.bold {
+  font-family: 'Open Sans Bold', sans-serif;
+}
+
 body .dark {
   color: #fff;
 }

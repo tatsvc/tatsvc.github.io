@@ -12,9 +12,12 @@
 	border-bottom: 2px solid white;
 }
 .menu h3 {
-	font-size: 16px;
+	font-size: 12px;
 	opacity: .8;
-	line-height: 28px;
+	line-height: 22px;
+	border-bottom: 1px solid rgba(249, 236, 255, 0.820);
+	padding-bottom: 10px;
+	padding-top: 10px;
 }
 
 .menu h3 a {
@@ -92,11 +95,11 @@ a.menu-button {
 	position: absolute;
 	top: 0;
 	z-index: 1001;
-	width: 500px;
+	width: 450px;
 	height: 100%;
 	font-size: 1.15em;
-	-webkit-transform: translate3d(-500px,0,0);
-	transform: translate3d(-500px,0,0);
+	-webkit-transform: translate3d(-450px,0,0);
+	transform: translate3d(-450px,0,0);
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
 }
@@ -109,21 +112,6 @@ a.menu-button {
 }
 
 
-/*
-.icon-list a {
-	display: block;
-	padding: 0.8em;
-}
-
-.icon-list a i {
-	opacity: 0.8;
-}
-
-.icon-list a span {
-	margin-left: 10px;
-	font-weight: 700;
-	font-size: 0.75em;
-}*/
 
 .close-button i {
 	display: block;
@@ -157,16 +145,14 @@ a.menu-button {
   -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
-  margin-left: 0px;
+  left: 0;
 }
 
 .show-menu .page-container {
-	margin-left: 700px;
+	left: 450px;
 }
 
-.show-menu .cs-skin-circular {
-	margin-left: 700px;
-}
+
 body.show-menu  {
 	overflow: hidden;
 }
