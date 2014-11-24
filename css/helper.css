@@ -264,7 +264,14 @@ h3.brandon {
 .round-bottom         		  { border-radius:0 0 3px 3px; }
 .round-left            		 { border-radius:3px 0 0 3px; }
 .unround					 { border-radius:0;}
-
+.subtle                 { color:#7f7f7f; color: rgba(0,0,0,.5); }
+small,
+.small {
+  font-size:14px;
+  line-height:20px;
+}
+.red {color: #ee595d; }
+.blue {color: #1f2846; }
 
 
 /* Small Screen Layout
