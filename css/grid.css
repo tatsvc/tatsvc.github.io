@@ -182,4 +182,7 @@
 		top:52px;
 		right: 10px
 	}
+	body {
+		overflow-x: hidden;
+	}
 }
