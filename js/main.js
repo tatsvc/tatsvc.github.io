@@ -34,6 +34,10 @@
 		// disable scrolling
 		window.addEventListener( 'scroll', noscroll );
 
+		$(document).bind('touchmove', function(e) {
+				if (isOpen){e.preventDefault();}
+		});
+
 		// initial animation
 		classie.add( container, 'loading' );
 
@@ -115,10 +119,6 @@
 				// reset path
 				path.attr( 'd', initialPath );
 				isAnimating = false; 
-				$('html, body').on('touchstart touchmove', function(e){ 
-				     //prevent native touch activity like scrolling
-				     e.preventDefault(); 
-				});
 			}, 300 );
 		}
 		else {
