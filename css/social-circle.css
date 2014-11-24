@@ -246,7 +246,7 @@ div.cs-skin-circular {
 }
 
 
-@media only screen and (max-width: 640px){
+@media only screen and (max-width: 800px){
 	.cs-skin-circular.cs-active .cs-options li:first-child {
 	-webkit-transform: translate3d(53.33px, 0, 0);
 	transform: translate3d(0, -53.33px, 0);

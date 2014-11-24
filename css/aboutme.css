@@ -193,6 +193,13 @@ body.show-menu  {
 		padding: 1em 1em;
 		}
 	}
+	body.show-menu {
+		overflow: hidden;
+	}
+	.show-menu .page-container {
+	left: 0;
+}
+
 
 @media only screen and (max-width: 640px){
 	.menu-button {
