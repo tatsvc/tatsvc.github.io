@@ -8,12 +8,13 @@ section {
 	padding: 1em;
 	text-align: center;
 }
-.main-content {
-	margin-top: 160px;
-	width: 100%;
-}
+
 
 .page-container {
 	height: auto;
 	position: relative;
+}
+
+.subnav {
+	height: 120px;
 }

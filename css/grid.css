@@ -164,25 +164,55 @@
 }
 
 
-@media only screen and (max-width: 950px){
-	.grid li.column4 {
-		width: 50%;
-	}
+
+
+
+.grid-wrap {
+	clear: both;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1260px;
 }
-@media only screen and (max-width: 640px){
-	.grid li.column4 {
-		width: 100%;
-		max-width: none;
-	}
-	.menu-button {
-		top:52px;
-		left: 10px
-	}
-	div.cs-skin-circular {
-		top:52px;
-		right: 10px
-	}
-	body {
-		overflow-x: hidden;
-	}
+
+.grid {
+	margin: 30px auto;
+	padding: 0;
+	list-style: none;
+	min-height: 500px;
+}
+
+.js .grid.loaded {
+	background: none;
+}
+
+.grid li {
+	display: inline-block;
+	overflow: hidden;
+	width: 400px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.js .grid li {
+	display: none;
+	float: left;
+}
+
+.js .grid.loaded li {
+	display: block;
+}
+
+
+/* Anchor and image */
+.grid li > a,
+.grid li img {
+	display: block;
+	outline: none;
+	border: none;
+}
+
+.grid li > a {
+	position: relative;
+	overflow: hidden;
+	margin: 7px;
 }

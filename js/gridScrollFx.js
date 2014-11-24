@@ -220,7 +220,7 @@
 		if ( this.resizeTimeout ) {
 			clearTimeout( this.resizeTimeout );
 		}
-		this.resizeTimeout = setTimeout( delayed, 1000 );
+		this.resizeTimeout = setTimeout( delayed, 0 );
 	}
 
 	// add to global namespace

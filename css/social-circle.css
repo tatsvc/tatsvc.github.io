@@ -106,8 +106,8 @@ div.cs-skin-circular {
 	background: transparent;
 	font-size: 2em;
 	width: auto;
-	right: 60px;
-	top: 80px;
+	right: 10px;
+	top: 65px;
 }
 
 .cs-skin-circular > span {
@@ -210,14 +210,13 @@ div.cs-skin-circular {
 .cs-skin-circular .cs-options li:nth-child(5) { background-image: url(../img/5.png); background-size: 100% auto;}
 
 
-.cs-skin-circular.cs-active .cs-options li:first-child  {
-	-webkit-transform: translate3d(53.33px, 0, 0);
-	transform: translate3d(53.33px, 0, 0);
-}
-
-.cs-skin-circular.cs-active .cs-options li:nth-child(2){
-	-webkit-transform: translate3d(37.71px, 37.71px, 0);
-	transform: translate3d(37.71px, 37.71px, 0);
+div.cs-skin-circular.cs-active .cs-options li:first-child {
+	-webkit-transform: translate3d(0, -53.33px, 0) !important;
+	transform: translate3d(0, -53.33px, 0) !important;
+	}
+div.cs-skin-circular.cs-active .cs-options li:nth-child(2) {
+-webkit-transform: translate3d(-37.71px, -37.71px, 0) !important;
+transform: translate3d(-37.71px, -37.71px, 0) !important;
 }
 
 .cs-skin-circular.cs-active .cs-options li:nth-child(3) {
@@ -247,20 +246,5 @@ div.cs-skin-circular {
 
 
 @media all and (max-width: 800px){
-	div.cs-skin-circular.cs-active .cs-options li:first-child {
-	-webkit-transform: translate3d(0, -53.33px, 0) !important;
-	transform: translate3d(0, -53.33px, 0) !important;
-	}
-	div.cs-skin-circular.cs-active .cs-options li:nth-child(2) {
-	-webkit-transform: translate3d(-37.71px, -37.71px, 0) !important;
-	transform: translate3d(-37.71px, -37.71px, 0) !important;
-	}
-	div.cs-skin-circular {
-		position: absolute;
-		background: transparent;
-		font-size: 2em;
-		width: auto;
-		right: 30px;
-		top: 80px;
-	}
+	
 }
