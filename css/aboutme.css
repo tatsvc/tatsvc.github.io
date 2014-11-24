@@ -217,25 +217,3 @@ body.show-menu  {
 
 }
 
-@media all and (max-width: 800px){
-	div.cs-skin-circular.cs-active .cs-options li:first-child {
-	-ms-transform: translate3d(53.33px, 0, 0) !important;
-	-moz-transform: translate3d(53.33px, 0, 0) !important;
-	-webkit-transform: translate3d(53.33px, 0, 0) !important;
-	transform: translate3d(0, -53.33px, 0) !important;
-	}
-	div.cs-skin-circular.cs-active .cs-options li:nth-child(2) {
-	-ms-transform: translate3d(37.71px, 37.71px, 0) !important;
-	-moz-transform: translate3d(37.71px, 37.71px, 0) !important;
-	-webkit-transform: translate3d(37.71px, 37.71px, 0) !important;
-	transform: translate3d(-37.71px, -37.71px, 0) !important;
-	}
-	div.cs-skin-circular {
-		position: absolute;
-		background: transparent;
-		font-size: 2em;
-		width: auto;
-		right: 30px;
-		top: 80px;
-	}
-}
