@@ -34,10 +34,6 @@
 		// disable scrolling
 		window.addEventListener( 'scroll', noscroll );
 
-		$(document).bind('touchmove', function(e) {
-				if (isOpen){e.preventDefault();}
-		});
-
 		// initial animation
 		classie.add( container, 'loading' );
 
