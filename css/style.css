@@ -1,16 +1,13 @@
-
 .homepage { background: #fafbfb; }
 .homepage a { color: #232b46; }
 
 a:hover, a:focus {
 	color: #455588;
 }
-
 section {
 	padding: 1em;
 	text-align: center;
 }
-
 .main-content {
 	margin-top: 160px;
 	width: 100%;

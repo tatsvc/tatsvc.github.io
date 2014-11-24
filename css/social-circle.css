@@ -39,6 +39,10 @@ div.cs-select:focus {
 	padding-right: 3em;
 }
 
+.cs-skin-circular > span {
+	font: normal normal normal 19px/1 FontAwesome;
+	color: #ee595d;
+}
 .cs-select > span::after,
 .cs-select .cs-selected span::after {
 	speak: none;
@@ -50,15 +54,6 @@ div.cs-select:focus {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.cs-select > span::after {
-	content: '\25BE';
-	right: 1em;
-}
-
-.cs-select .cs-selected span::after {
-	content: '\2713';
-	margin-left: 1em;
-}
 
 .cs-select.cs-active > span::after {
 	-webkit-transform: translateY(-50%) rotate(180deg);
@@ -106,19 +101,6 @@ div.cs-active {
 	cursor: default;
 }
 
-
-
-@font-face {
-	font-family: 'icomoon';
-	src:url('../fonts/icomoon/icomoon.eot?-rdnm34');
-	src:url('../fonts/icomoon/icomoon.eot?#iefix-rdnm34') format('embedded-opentype'),
-		url('../fonts/icomoon/icomoon.woff?-rdnm34') format('woff'),
-		url('../fonts/icomoon/icomoon.ttf?-rdnm34') format('truetype'),
-		url('../fonts/icomoon/icomoon.svg?-rdnm34#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
 div.cs-skin-circular {
 	position: absolute;
 	background: transparent;
@@ -135,7 +117,7 @@ div.cs-skin-circular {
 	text-align: center;
 	font-weight: 700;
 	padding: 0;
-	text-indent: 100%;
+	/*text-indent: 100%;*/
 	-webkit-transition: -webkit-transform 0.2s ease-out;
 	transition: transform 0.2s ease-out;
 }
@@ -145,8 +127,6 @@ div.cs-skin-circular {
 }
 
 .cs-skin-circular > span::after {
-	font-family: 'icomoon';
-	content: '\e00a';
 	right: 0;
 	width: 100%;
 	text-indent: 0;

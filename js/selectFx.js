@@ -76,7 +76,7 @@
 		this.current = this.selOpts.indexOf( this.selEl.querySelector( 'li.cs-selected' ) ) || -1;
 		
 		// placeholder elem
-		this.selPlaceholder = this.selEl.querySelector( 'span.cs-placeholder' );
+		this.selPlaceholder = this.selEl.querySelector( 'span.cs-placeholder ' );
 
 		// init events
 		this._initEvents();
@@ -130,7 +130,7 @@
 		this.selEl = document.createElement( 'div' );
 		this.selEl.className = this.el.className;
 		this.selEl.tabIndex = this.el.tabIndex;
-		this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
+		this.selEl.innerHTML = '<span class="cs-placeholder fa fa-fw fa-heart">' + this.selectedOpt.textContent + '</span>' + opts_el;
 		this.el.parentNode.appendChild( this.selEl );
 		this.selEl.appendChild( this.el );
 	}
