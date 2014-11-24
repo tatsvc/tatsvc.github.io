@@ -163,3 +163,23 @@
 	visibility: visible;
 }
 
+
+@media only screen and (max-width: 950px){
+	.grid li.column4 {
+		width: 50%;
+	}
+}
+@media only screen and (max-width: 640px){
+	.grid li.column4 {
+		width: 100%;
+		max-width: none;
+	}
+	.menu-button {
+		top:52px;
+		left: 10px
+	}
+	div.cs-skin-circular {
+		top:52px;
+		right: 10px
+	}
+}
