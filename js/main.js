@@ -1,5 +1,6 @@
 (function() {
 
+	var stickyNavTop = $('.sticky-nav').offset().top; 
 	var support = { animations : Modernizr.cssanimations },
 		container = document.getElementById( 'ip-container' ),
 		header = container.querySelector( 'header.ip-header' ),
@@ -46,9 +47,28 @@
 
 		initEvents();
 		loadGrid();
+		// stickyNav();
 	}
 
+
+	function stickyNav(){    
+		console.log ('stickyNav');
+	  var scrollTop = $(window).scrollTop();
+	  var windowWidth = $(window).innerWidth();
+	  if (windowWidth > 640) {
+	    if (scrollTop > stickyNavTop) {   
+	      $('.sticky-nav').addClass('sticky');  
+	      $('.sticky-nav + .content-wrap').css("margin-top", "174px");  
+	    } else {  
+	      $('.sticky-nav').removeClass('sticky');    
+	      $('.sticky-nav + .content-wrap').css("margin-top", "0px"); 
+	    }  
+	  }
+	};  
 	
+	// $(window).scroll(function() {  
+ //      stickyNav();  
+	// });
 
 	function startLoading() {
 		// simulate loading something..

@@ -68,8 +68,8 @@
 /* Menu Button */
 .menu-button {
 	position: absolute;
-	top: 65px;
-	left: 10px;
+	top: 75px;
+	left: 60px;
 	/* margin: 1em; */
 	padding: 0;
 	/* width: 2.5em; */
@@ -77,6 +77,8 @@
 	border: none;
 	font-size: 1.5em;
 	cursor: pointer;
+	transiton: all 1s ease-in-out;
+	-webkit-transiton: all 1s ease-in-out;
 }
 a.menu-button {
 	color: #ee595d;

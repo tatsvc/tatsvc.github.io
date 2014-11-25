@@ -100,11 +100,11 @@
 }
 
 @-webkit-keyframes animLoadedLogo {
-	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,40px,0) scale3d(0.55,0.55,1); }
+	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.55,0.55,1); }
 }
 
 @keyframes animLoadedLogo {
-	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,40px,0) scale3d(0.55,0.55,1); transform: translate3d(0,100%,0) translate3d(0,40px,0) scale3d(0.55,0.55,1); }
+	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.55,0.55,1); transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.55,0.55,1); }
 }
 
 .loaded .ip-loader {
@@ -139,6 +139,10 @@
 
 @keyframes animLoadedHeader {
 	to { -webkit-transform: translate3d(0,-100%,0); transform: translate3d(0,-100%,0); }
+}
+.ip-header {
+	transiton: all 1s ease-in-out;
+	-webkit-transiton: all 1s ease-in-out;
 }
 
 .layout-switch .ip-header {
