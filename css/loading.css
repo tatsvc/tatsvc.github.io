@@ -29,6 +29,12 @@
 	transform: translate3d(0,25%,0);
 }
 
+.alreadyloaded .ip-loader {
+	display: none;
+}
+
+
+
 .ip-loader {
 	bottom: 20%;
 }
@@ -65,6 +71,10 @@
 
 /* Animations */
 /* Initial animation of header elements */
+.alreadyloaded .ip-header {
+	display: none;
+}
+
 .loading .ip-logo,
 .loading .ip-loader {
 	opacity: 1;
@@ -90,6 +100,7 @@
 .loaded .ip-loader {
 	opacity: 1;
 }
+
 
 /* Position and scale of logo */
 .loaded .ip-logo {
@@ -150,6 +161,9 @@
 }
 .layout-switch .ip-header {
 	background: transparent;
+}
+.alreadyloaded .ip-logo {
+	display: block;
 }
 
 .no-js .ip-header {

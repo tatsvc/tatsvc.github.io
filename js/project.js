@@ -4,7 +4,6 @@
 	var support = { animations : Modernizr.cssanimations },
 		container = document.getElementById( 'ip-container' ),
 		header = container.querySelector( 'header.ip-header' ),
-		loader = new PathLoader( document.getElementById( 'ip-loader-circle' ) ),
 		animEndEventNames = { 'WebkitAnimation' : 'webkitAnimationEnd', 'OAnimation' : 'oAnimationEnd', 'msAnimation' : 'MSAnimationEnd', 'animation' : 'animationend' },
 		// animation end event name
 		animEndEventName = animEndEventNames[ Modernizr.prefixed( 'animation' ) ];
@@ -25,87 +24,68 @@
 		isAnimating = false;
 
 	function init() {
-		if(window.location.hash) {
-			classie.add( container, 'alreadyloaded' );
-			classie.add( document.body, 'layout-switch' );
-		} else {
-			window.addEventListener( 'scroll', noscroll );
-			classie.add( container, 'loading' );
-			if( support.animations ) {
-				container.addEventListener( animEndEventName, onEndInitialAnimation );
-			}else {
-				onEndInitialAnimation();
-			}
-			  	startLoading();
-		}	
-		
-
-
 		var onEndInitialAnimation = function() {
 			if( support.animations ) {
 				this.removeEventListener( animEndEventName, onEndInitialAnimation );
-			}	
+			}
+
+			// startLoading();
 		};
-		
+
+		// initial animation
+		classie.add( container, 'loading' );
+
+		if( support.animations ) {
+			container.addEventListener( animEndEventName, onEndInitialAnimation );
+		}
+		else {
+			onEndInitialAnimation();
+		}
+
 		initEvents();
 		loadGrid();
+		// stickyNav();
 	}
 
 
-	function stickyNav(){    
-		console.log ('stickyNav');
-	  var scrollTop = $(window).scrollTop();
-	  var windowWidth = $(window).innerWidth();
-	  if (windowWidth > 640) {
-	    if (scrollTop > stickyNavTop) {   
-	      $('.sticky-nav').addClass('sticky');  
-	      $('.sticky-nav + .content-wrap').css("margin-top", "174px");  
-	    } else {  
-	      $('.sticky-nav').removeClass('sticky');    
-	      $('.sticky-nav + .content-wrap').css("margin-top", "0px"); 
-	    }  
-	  }
-	};  
+
 	
-	function startLoading() {
-		// simulate loading something..
+	// function startLoading() {
+	// 	// simulate loading something..
+	// 	var simulationFn = function(instance) {
+	// 		var progress = 0,
+	// 			interval = setInterval( function() {
+	// 				progress = Math.min( progress + Math.random() * 0.1, 1 );
+	// 				instance.setProgress( progress );
 
+	// 				// reached the end
+	// 				if( progress === 1 ) {
+	// 					classie.remove( container, 'loading' );
+	// 					classie.add( container, 'loaded' );
+	// 					clearInterval( interval );
 
-		var simulationFn = function(instance) {
-			var progress = 0,
-				interval = setInterval( function() {
-					progress = Math.min( progress + Math.random() * 0.1, 1 );
-					instance.setProgress( progress );
+	// 					var onEndHeaderAnimation = function(ev) {
+	// 						if( support.animations ) {
+	// 							if( ev.target !== header ) return;
+	// 							this.removeEventListener( animEndEventName, onEndHeaderAnimation );
+	// 						}
 
-					// reached the end
-					if( progress === 1 ) {
-						classie.remove( container, 'loading' );
-						classie.add( container, 'loaded' );
-						clearInterval( interval );
+	// 						classie.add( document.body, 'layout-switch' );
+	// 						window.removeEventListener( 'scroll', noscroll );
+	// 					};
 
-						var onEndHeaderAnimation = function(ev) {
-							if( support.animations ) {
-								if( ev.target !== header ) return;
-								this.removeEventListener( animEndEventName, onEndHeaderAnimation );
-							}
+	// 					if( support.animations ) {
+	// 						header.addEventListener( animEndEventName, onEndHeaderAnimation );
+	// 					}
+	// 					else {
+	// 						onEndHeaderAnimation();
+	// 					}
+	// 				}
+	// 			}, 70 );
+	// 	};
 
-							classie.add( document.body, 'layout-switch' );
-							window.removeEventListener( 'scroll', noscroll );
-							window.location.hash = 'loaded';
-						};
-
-						if( support.animations ) {
-							header.addEventListener( animEndEventName, onEndHeaderAnimation );
-						}
-						else {
-							onEndHeaderAnimation();
-						}
-					}
-				}, 70 );
-		};
-
-		loader.setProgressFn( simulationFn );
-	}
+	// 	loader.setProgressFn( simulationFn );
+	// }
 	
 	function noscroll() {
 		window.scrollTo( 0, 0 );
