@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="{{site.url}}/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/helper.css" />
 		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/loading.css" />	
+		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/loading.css" />
 		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/grid.css" />
 		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/aboutme.css" />
 		<link rel="stylesheet" type="text/css" href="{{site.url}}/css/social-circle.css" />
@@ -78,17 +78,15 @@
 <circle cx="673.2" cy="176.7" r="10.7"/>
 </svg>
 </a></h1>
-			
 </div>
 
-
 <div class="svg-wrap">
-<svg width="64" height="64" viewBox="0 0 64 64">
-				<path id="arrow-left-1" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
-			</svg>
-			<svg width="64" height="64" viewBox="0 0 64 64">
-				<path id="arrow-right-1" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
-			</svg>
+	<svg width="64" height="64" viewBox="0 0 64 64">
+		<path id="arrow-left-1" d="M46.077 55.738c0.858 0.867 0.858 2.266 0 3.133s-2.243 0.867-3.101 0l-25.056-25.302c-0.858-0.867-0.858-2.269 0-3.133l25.056-25.306c0.858-0.867 2.243-0.867 3.101 0s0.858 2.266 0 3.133l-22.848 23.738 22.848 23.738z" />
+	</svg>
+	<svg width="64" height="64" viewBox="0 0 64 64">
+		<path id="arrow-right-1" d="M17.919 55.738c-0.858 0.867-0.858 2.266 0 3.133s2.243 0.867 3.101 0l25.056-25.302c0.858-0.867 0.858-2.269 0-3.133l-25.056-25.306c-0.858-0.867-2.243-0.867-3.101 0s-0.858 2.266 0 3.133l22.848 23.738-22.848 23.738z" />
+	</svg>
 </div>
 
 <nav class="nav-roundslide contain">
@@ -97,30 +95,36 @@
 		<span class="icon-wrap"><svg class="icon" width="20" height="20" viewBox="0 0 64 64"><use xlink:href="#arrow-left-1"></svg></span>
 		<h3 class="brandon">{{page.next.title}}</h3>
 	</a>
+ 	{% else if page.next.url != nil %}
+		{% assign last_post = site.posts.last %}
+		<a class="prev" href="{{site.baseurl}}{{last_post.url}}">
+			<span class="icon-wrap"><svg class="icon" width="20" height="20" viewBox="0 0 64 64"><use xlink:href="#arrow-left-1"></svg></span>
+			<h3 class="brandon">{{last_post.title}}</h3>
+		</a>
 	{% endif %}
 	{% if page.previous.url != nil %}
 	<a class="next" href="{{site.baseurl}}{{page.previous.url}}">
 		<span class="icon-wrap"><svg class="icon" width="20" height="20" viewBox="0 0 64 64"><use xlink:href="#arrow-right-1"></svg></span>
 		<h3 class="brandon">{{page.previous.title}}</h3>
 	</a>
+ 	{% else if page.next.url != nil %}
+ 		{% assign first_post = site.posts.first %}
+		<a class="next" href="{{site.baseurl}}{{first_post.url}}">
+			<span class="icon-wrap"><svg class="icon" width="20" height="20" viewBox="0 0 64 64"><use xlink:href="#arrow-right-1"></svg></span>
+			<h3 class="brandon">{{first_post.title}}</h3>
+		</a>
 	{% endif %}
 </nav>
 
 	{{content}}
-
-
 </div> <!-- end page-container -->
-
-			
 
 		<script src="{{site.url}}/js/classie.js"></script>
 		<script src="{{site.url}}/js/masonry.pkgd.min.js"></script>
 		<script src="{{site.url}}/js/imagesloaded.pkgd.min.js"></script>
 		<script src="{{site.url}}/js/gridScrollFx.js"></script>
-	
-			<script src="{{site.url}}/js/selectFx.js"></script>
-
-		 <script src="{{site.url}}/js/project.js"></script>
+		<script src="{{site.url}}/js/selectFx.js"></script>
+		<script src="{{site.url}}/js/project.js"></script>
 
 </body>
 </html>
