@@ -1,5 +1,5 @@
 ---
-title: The Mapbox Experience
+title: Mapbox Book
 layout: project
 permalink: /project/mapboxbook
 cardimg: /work/cards/mapboxbook.jpg

@@ -1,7 +1,24 @@
 ---
+title: Industries
 layout: project
 permalink: /project/industries
 cardimg: /work/cards/industries.jpg
+work:
+  images:
+    - title: industries.png
+      col: column12
+    - title: industries_00.png
+      col: column12
+    - title: industries_01.png
+      col: column12
+    - title: industries_02.png
+      col: column12
+    - title: industries_03.png
+      col: column12
+    - title: industries_04.png
+      col: column12
+    - title: industries_05.png
+      col: column12
 ---
 
 
