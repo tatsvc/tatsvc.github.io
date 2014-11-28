@@ -143,6 +143,7 @@ nav.nav-roundslide a svg {
 	font-size: 0.85em;
 	line-height: 4.45;
 	opacity: 0;
+	display: none;
 	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 	transition: opacity 0.3s, transform 0.3s;
 }
@@ -167,6 +168,7 @@ nav.nav-roundslide a svg {
 }
 
 .nav-roundslide a:hover h3 {
+	display: block;
 	opacity: 1;
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
