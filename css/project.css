@@ -212,7 +212,7 @@ body.projectpage div ul.facts i {
 body.projectpage div ul.facts li a {
 	color: #8383c4;
 }
-body.projectpage  divul.facts li a:hover {
+body.projectpage  div ul.facts li a:hover {
 	color: #ee595d;
 }
 
@@ -231,5 +231,20 @@ body.projectpage .work img {
 	body.projectpage .limiter {
 		padding-left: 30px;
 		padding-right: 30px;
+	}
+	.post-header {
+		height: 300px;
+	}
+	.nav-roundslide {
+		top: 170px;
+	}
+}
+
+@media only screen and (max-width:900px) {
+	#intro, div.facts {
+		width: 100%;
+		padding-right: 20px;
+		padding-left: 20px;
+
 	}
 }
