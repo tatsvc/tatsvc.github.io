@@ -173,3 +173,63 @@ nav.nav-roundslide a svg {
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
 }
+
+body.projectpage {
+	overflow-x: hidden;
+	background-color: #f4f7f7;
+}
+
+
+body.projectpage #intro h1.brandon {
+	font-size: 25px;
+	line-height: 41px;
+}
+
+body.projectpage p {
+	line-height: 28px;
+	font-weight: 600;
+	color: rgb(155, 155, 155);
+}
+
+body.projectpage div ul.facts li {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 400;
+	color: rgb(155, 155, 155);
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-bottom: 1px dotted rgb(155, 155, 155);;
+}
+
+body.projectpage div ul.facts i {
+	font: normal normal normal 14px/1 FontAwesome;
+	color: rgb(155, 155, 155);
+	margin-right: 20px;
+	font-weight: 500;
+}
+
+body.projectpage div ul.facts li a {
+	color: #8383c4;
+}
+body.projectpage  divul.facts li a:hover {
+	color: #ee595d;
+}
+
+body.projectpage .work img {
+	width: 100%;
+	height: auto;
+}
+
+@media only screen and (max-width:640px) {
+	body.projectpage .work img {
+		padding-left: 0px;
+		padding-right: 0px;
+
+	}
+
+	body.projectpage .limiter {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
