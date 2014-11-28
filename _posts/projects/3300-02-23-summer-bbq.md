@@ -1,13 +1,14 @@
 ---
-title: OSM T-shirt
+title: Summer BBQ
 layout: project
-permalink: /project/osm
-cardimg: /work/cards/osm.jpg
+permalink: /project/summer-bbq
+cardimg: /work/cards/summer-bbq.jpg
 work:
   images:
-    - title: tshirt.jpg
+    - title: summer-bbq.gif
       col: column12
 ---
+
 
 
 <div class="limiter margin-top8 clearfix padding2 margin-bottom4">
@@ -27,6 +28,10 @@ work:
 				<li class="color1"></li>
 				<li class="color2"></li>
 				<li class="color3"></li>
+				<li class="color4"></li>
+				<li class="color5"></li>
+				<li class="color6"></li>
+				<li class="color7"></li>
 			</ul>
 		
 		</div>
@@ -48,8 +53,8 @@ work:
 .post-header {
   width: 100%;
   height:550px;
-  background: url(../../work/header/osm.jpg) center center no-repeat;
-  background-color: #efefef;
+  background: url(../../work/header/summer-bbq.jpg) center center no-repeat;
+  background-color: #1f2847;
   background-size: cover;
 }
 
@@ -69,8 +74,12 @@ div ul.colors li {
 
 
 .color1 {background-color: #eef9fd; border: 1px solid #e4ebfa;}
-.color2 {background-color: #1e1f35; }
-.color3 {background-color: #aed5c3; }
+.color2 {background-color: #fae277;}
+.color3 {background-color: #fad7db; }
+.color4 {background-color: #f68269; }
+.color5 {background-color: #eb3123; }
+.color6 {background-color: #f59a4e; }
+.color7 {background-color: #3ea9f5; }
 
 
 @media only screen and (max-width:640px) {
