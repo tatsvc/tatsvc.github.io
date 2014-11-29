@@ -96,7 +96,7 @@ body {
 	font-weight: 400;
 	font-size: 1em;  font-family: "adelle",serif;
   -webkit-font-smoothing:antialiased;
-  
+
 }
 
 .bold {
@@ -166,9 +166,9 @@ h3.brandon {
 .column1    { float:left; width:08.3333%; max-width:100px; }
 .column2    { float:left; width:16.6666%; max-width:200px; }
 .column3    { float:left; width:25.0000%; max-width:300px; }
-.column4    { float:left; width:33.3333%; max-width:400px; }
+.column4    { float:left; width:33.3333%;}
 .column5    { float:left; width:41.6666%; max-width:500px; }
-.column6    { float:left; width:50.0000%; max-width:600px; }
+.column6    { float:left; width:50.0000%; }
 .column7    { float:left; width:58.3333%; max-width:700px; }
 .column8    { float:left; width:66.6666%; max-width:800px; }
 .column9    { float:left; width:75.0000%; max-width:900px; }
