@@ -178,7 +178,7 @@ nav.nav-roundslide a svg {
 
 body.projectpage {
 	overflow-x: hidden;
-	background-color: #f4f7f7;
+	background-color: #fff;
 }
 
 
@@ -189,10 +189,9 @@ body.projectpage #intro h1.brandon {
 
 body.projectpage p {
 	line-height: 28px;
+	font-weight: 600;
 	color: rgb(155, 155, 155);
-	font-weight: 400;
-	font-size: 1em;  font-family: "adelle",serif;
-  -webkit-font-smoothing:antialiased;
+
 }
 
 body.projectpage div ul.facts li {
