@@ -143,37 +143,49 @@ nav.nav-roundslide a svg {
 	font-size: 0.8em;
 	line-height: 4.45;
 	opacity: 0;
-	display: none;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
+	width: 0px;
 }
 
 .nav-roundslide a.prev h3 {
-	right: 20px;
+	right: -20px;
 	text-align: left;
-	-webkit-transform: translateX(30%);
-	transform: translateX(30%);
+	width: auto;
+	-webkit-transition: opacity .1s, right .3s;
+	transition: opacity .1s, right .3s;
 }
 
 .nav-roundslide a.next h3 {
-	left: 20px;
+	left: -20px;
 	text-align: right;
-	-webkit-transform: translateX(-30%);
-	transform: translateX(-30%);
+	width: auto;
+	-webkit-transition: opacity .1s, left .3s;
+	transition: opacity .1s, left .3s;
 }
+
+.nav-roundslide a.next:focus h3, .nav-roundslide a.prev:focus h3  {
+	opacity: 0 !important;
+	transition: none;
+}
+
 
 .nav-roundslide a:hover {
 	width: 200px;
 	opacity: 1;
 }
 
-.nav-roundslide a:hover h3 {
+.nav-roundslide a.next:hover h3 {
 	display: block;
 	opacity: 1;
 	-webkit-transition-delay: 0.1s;
 	transition-delay: 0.1s;
-	-webkit-transform: translateX(0);
-	transform: translateX(0);
+	left: 20px;
+}
+.nav-roundslide a.prev:hover h3 {
+	display: block;
+	opacity: 1;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+	right: 20px;
 }
 
 body.projectpage {
@@ -189,7 +201,7 @@ body.projectpage #intro h1.brandon {
 
 body.projectpage p {
 	line-height: 28px;
-	font-weight: 400;
+	font-weight: 600;
 	font-size: 1em;  font-family: "adelle",serif;
   -webkit-font-smoothing:antialiased;
 	color: rgb(155, 155, 155);
