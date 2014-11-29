@@ -26,7 +26,7 @@ work:
 	<div id='intro' class='margin2r column7'>
 		<h1 class="brandon">{{page.title}}</h1>
 		<p class=" padding2y">
-		Puppy kitty ipsum dolor sit good dog barky shake scratch whiskers. Finch stick Mittens play catch licks turtle ID tag pet supplies twine wag tail kitty nest tail wagging tuxedo gimme five walk. Mouse cockatiel Mittens finch grooming parrot mouse harness parrot. Ball right paw speak lazy dog vaccine licks toys maine coon cat bark wagging chirp play food. Running bark lazy dog kisses heel chirp leash heel leash.
+		 We launched an series of industry pages to demonstrate how companies in various industries can use Mapbox and highlight how they've been using our tools. These pages don't just list different companies using us, but show what API's they're using and how Mapbox.com is the solution for their application. The main goal of this project was to package the lego pieces for each industry and showing that Mapbox is more than just pretty maps but a powerful platform to develop complex applications on top of that drive key business decisions within these industries.
 		</p>
 	</div>
 	<div class="column3 clearfix facts">

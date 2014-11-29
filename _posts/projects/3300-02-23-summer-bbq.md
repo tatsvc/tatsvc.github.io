@@ -15,7 +15,7 @@ work:
 	<div id='intro' class='margin2r column7'>
 		<h1 class="brandon">{{page.title}}</h1>
 		<p class=" padding2y">
-		Puppy kitty ipsum dolor sit good dog barky shake scratch whiskers. Finch stick Mittens play catch licks turtle ID tag pet supplies twine wag tail kitty nest tail wagging tuxedo gimme five walk. Mouse cockatiel Mittens finch grooming parrot mouse harness parrot. Ball right paw speak lazy dog vaccine licks toys maine coon cat bark wagging chirp play food. Running bark lazy dog kisses heel chirp leash heel leash.
+		An animated GIF to promote the annual Mapbox Summer BBQ.
 		</p>
 	</div>
 	<div class="column3 clearfix facts">
@@ -23,6 +23,7 @@ work:
 			<li><i class='fa fa-fw fa-calendar'></i>April, 2014</li>
 			<li><i class='fa fa-fw fa-paint-brush'></i>Illustration</li>
 			<li><i class='fa fa-fw fa-bolt'></i>Animation</li>
+			<li><i class='fa fa-fw fa-trophy'></i><a href='https://www.mapbox.com/blog/summertime-bbq/'>View website</a></li>
 		</ul>
 		<ul class="colors column12 padding2y">
 				<li class="color1"></li>
@@ -50,6 +51,11 @@ work:
 
 
 <style>
+
+body.projectpage  {
+	background-color: white;
+}
+
 .post-header {
   width: 100%;
   height:550px;

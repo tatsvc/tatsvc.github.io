@@ -58,7 +58,7 @@ work:
 	<div id='intro' class='margin2r column7'>
 		<h1 class="brandon">{{page.title}}</h1>
 		<p class=" padding2y">
-		Puppy kitty ipsum dolor sit good dog barky shake scratch whiskers. Finch stick Mittens play catch licks turtle ID tag pet supplies twine wag tail kitty nest tail wagging tuxedo gimme five walk. Mouse cockatiel Mittens finch grooming parrot mouse harness parrot. Ball right paw speak lazy dog vaccine licks toys maine coon cat bark wagging chirp play food. Running bark lazy dog kisses heel chirp leash heel leash.
+		As a final assignment for my spring semester at The Washington Center I had to make a 'portfolio' with all my reports, essays, assignments, internship reports, reflections, work samples,... so I decided to make a book instead of just collecting all these files.
 		</p>
 	</div>
 	<div class="column3 clearfix facts">

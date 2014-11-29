@@ -14,8 +14,8 @@ work:
 <div class="limiter margin-top8 clearfix padding2 margin-bottom4">
 	<div id='intro' class='margin2r column7'>
 		<h1 class="brandon">{{page.title}}</h1>
-		<p class=" padding2y">
-		Puppy kitty ipsum dolor sit good dog barky shake scratch whiskers. Finch stick Mittens play catch licks turtle ID tag pet supplies twine wag tail kitty nest tail wagging tuxedo gimme five walk. Mouse cockatiel Mittens finch grooming parrot mouse harness parrot. Ball right paw speak lazy dog vaccine licks toys maine coon cat bark wagging chirp play food. Running bark lazy dog kisses heel chirp leash heel leash.
+		<p class=" padding2y"> 
+		I got to draw a ham at work!
 		</p>
 	</div>
 	<div class="column3 clearfix facts">
