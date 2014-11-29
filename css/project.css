@@ -189,9 +189,10 @@ body.projectpage #intro h1.brandon {
 
 body.projectpage p {
 	line-height: 28px;
-	font-weight: 600;
+	font-weight: 400;
+	font-size: 1em;  font-family: "adelle",serif;
+  -webkit-font-smoothing:antialiased;
 	color: rgb(155, 155, 155);
-
 }
 
 body.projectpage div ul.facts li {
