@@ -107,10 +107,14 @@
 	-webkit-transform-origin: 50% 0;
 	transform-origin: 50% 0;
 	-webkit-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+	-ms-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
 	animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
 }
 
 @-webkit-keyframes animLoadedLogo {
+	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.55,0.55,1); }
+}
+@-ms-keyframes animLoadedLogo {
 	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.55,0.55,1); }
 }
 
@@ -194,4 +198,9 @@
 		width: 100%%;
 	}
 
+}
+
+
+.loaded svg#Layer_1 {
+	height: 130px;
 }
