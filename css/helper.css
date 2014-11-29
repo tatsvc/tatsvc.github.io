@@ -93,10 +93,10 @@ table { border-collapse: collapse; border-spacing:0; }
 body {
 	background: #333;
 	color: #2a3346;
-	font-weight: 400;
+	font-weight: 300;
 	font-size: 1em;  font-family: "adelle",serif;
   -webkit-font-smoothing:antialiased;
-  
+
 }
 
 .bold {
