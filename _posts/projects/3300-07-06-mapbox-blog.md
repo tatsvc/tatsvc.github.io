@@ -18,7 +18,7 @@ work:
 	<div id='intro' class='margin2r column7'>
 		<h1 class="brandon">{{page.title}}</h1>
 		<p class=" padding2y">
-		 A new page for the <a href='http://www.mapbox.com'>Mapbox website</a> talking about maps on mobile.
+			The Mapbox blog redesign I worked on with <a href="https://www.mapbox.com/about/team/#katy-decorah">Katy</a> and <a href="https://www.mapbox.com/about/team/#maya-gao">Maya</a>.
 		</p>
 	</div>
 	<div class="column3 clearfix facts">
@@ -27,7 +27,7 @@ work:
 			<li><i class='fa fa-fw fa-circle'></i>UI/UX</li>
 			<li><i class='fa fa-fw fa-code'></i>Frontend Development</li>
 			<li><i class='fa fa-fw fa-paint-brush'></i>Illustration</li>
-			<li><i class='fa fa-fw fa-trophy'></i><a href='https://www.mapbox.com/mobile/'>View page</a></li>
+			<li><i class='fa fa-fw fa-trophy'></i><a href='https://www.mapbox.com/blog/'>View page</a></li>
 		</ul>
 		<ul class="colors column12 padding2y">
 				<li class="color1"></li>
