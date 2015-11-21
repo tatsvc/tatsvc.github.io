@@ -60,7 +60,7 @@ work:
 .post-header {
   width: 100%;
   height:550px;
-  background: url(../../work/header/mapbox-billboards.jpg) right top no-repeat;
+  background: url(../../work/header/billboards.jpg) right top no-repeat;
   background-color: #1f2847;
   background-size: cover;
 }
