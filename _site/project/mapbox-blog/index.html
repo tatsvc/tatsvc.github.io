@@ -137,8 +137,8 @@
 <div class="work limiter clearfix">
 
 		<div class="padding2">
-		<div class="videoWrapper">
-		<iframe src="https://player.vimeo.com/video/146494133?title=0&amp;byline=0&amp;portrait=0" width="1200" height="751" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+		<div class="videoWrapper" style="height:0; padding-bottom:62.58%;">
+		<iframe src="https://player.vimeo.com/video/146494133" width="100%" height="100%" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 		</div>
 		</div>
 
@@ -181,6 +181,26 @@ div ul.colors li {
 	border-radius: 50%;
 }
 
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.player .video-wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	padding-bottom: 56.52% !important;
+}
 
 .color1 {background-color: white; border: 1px solid #e4ebfa;}
 .color2 {background-color: #e6e6e6; }
