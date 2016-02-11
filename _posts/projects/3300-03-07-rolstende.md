@@ -2,7 +2,7 @@
 title: Rolstende
 layout: project
 permalink: /project/rolstende
-cardimg: /work/cards/rolstende.jpg 
+cardimg: /work/cards/rolstende.jpg
 work:
   images:
     - title: rolstende_01.jpg
@@ -42,18 +42,18 @@ work:
 				<li class="color5"></li>
 				<li class="color6"></li>
 			</ul>
-		
+
 		</div>
 </div>
 
 <div class="work limiter clearfix">
 
 		<div class="padding2">
-		<div class="videoWrapper">
-		  <iframe src="//player.vimeo.com/video/64255286" width="1200" height="675" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<div class="videoWrapper" style="height:0; padding-bottom:56.25%;">
+		  <iframe src="//player.vimeo.com/video/64255286" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		</div>
 		</div>
-	
+
 	    {% for item in page.work.images %}
 		    <div class="{{item.col}}">
 				<img src="{{site.url}}/work/img/{{page.title | downcase | replace:' ','-'}}/{{item.title}}" class="padding2" />
@@ -100,7 +100,7 @@ work:
 div ul.colors {
 	width: 100%;
 	height: 20px;
-	border-radius:50%; 
+	border-radius:50%;
 }
 
 div ul.colors li {
