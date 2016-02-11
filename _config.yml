@@ -1,1 +1,4 @@
 paginate: 1
+future: true
+gems:
+- jekyll-paginate

@@ -6,17 +6,17 @@ title: Tatiana.be
 
 	<div class="content-wrap">
 				<!-- main content -->
-			<div class='main-content center margin-top4'>	
+			<div class='main-content center margin-top4'>
 
 			<section class="grid-wrap">
 				<ul class="grid swipe-down" id="grid">
-			
+
 				  {% for post in site.posts %}
 				    <li>
-				      <li class=' padding1'><a href="{{post.permalink}}"><img width='100%' src="{{ post.cardimg }}" alt="dummy"></a></li>
+				      <li class=' padding1'><a href="{{baseurl}}{{post.permalink}}"><img width='100%' src="{{baseurl}}{{ post.cardimg }}" alt="dummy"></a></li>
 				    </li>
 				  {% endfor %}
-			
+
 				</ul>
-			</section> 
+			</section>
 			</div>
