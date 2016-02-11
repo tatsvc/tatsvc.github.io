@@ -9,7 +9,6 @@ work:
       col: column12
 ---
 
-
 <div class="limiter margin-top8 clearfix padding2 margin-bottom4">
 	<div id='intro' class='margin2r column7'>
 		<h1 class="brandon">{{page.title}}</h1>
