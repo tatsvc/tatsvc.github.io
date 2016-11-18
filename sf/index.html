@@ -1,0 +1,343 @@
+<!DOCTYPE html >
+<html lang="en" class="no-js">
+<head>
+ <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tatiana</title>
+        <script src="//use.typekit.net/sur2zmw.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="../css/helper.css" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/loading.css" />
+        <link rel="stylesheet" type="text/css" href="../css/grid.css" />
+        <link rel="stylesheet" type="text/css" href="../css/aboutme.css" />
+        <link rel="stylesheet" type="text/css" href="../css/social-circle.css" />
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css" />
+        <link rel="stylesheet" type="text/css" href="../css/project.css" />
+        <script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/modernizr.custom.js"></script>
+        <script src="../js/snap.svg-min.js"></script>
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+
+<style>
+
+
+
+.mapboxgl-popup-tip {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    z-index: 1;
+}
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+
+    .mapboxgl-popup-content {
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 5px rgba(60, 97, 121, 0.22);
+    padding: 10px 20px 20px;
+    pointer-events: auto;
+    font-family: Roboto;
+    font-size: 19px;
+}
+
+    .mapboxgl-popup-close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    border-radius: 0 3px 0 0;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0);
+    color: #e95591;
+}
+    body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+
+    ul.facts {
+    padding-top: 10px;
+    font-size: 12px;
+    font-family: 'Open Sans';
+    color: #8593a8;
+    }
+
+    ul.facts li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgb(155, 155, 155);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px dotted rgb(155, 155, 155);
+}
+
+    h3 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    line-height: 40px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-family: Brandon;
+    color: #3737ac;
+}
+
+ul.facts i {
+    font: normal normal normal 14px/1 FontAwesome;
+    color: rgb(155, 155, 155);
+    margin-right: 20px;
+    font-weight: 500;
+}
+</style>
+
+
+<div id='map'></div>
+<script>
+
+
+
+
+mapboxgl.accessToken = 'pk.eyJ1IjoidGF0aWFuYSIsImEiOiJjaWs1bzRiZGQwMDdjcHRrc285bTdwcWU5In0.0EWPVHyjaE9jTzNvOiIO-w';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/tatiana/ciupt7zg100622io46ur0w8sh', //hosted style id
+    center: [-122.4015, 37.7770], // starting position
+    zoom: 13.37 // starting zoom
+});
+
+
+
+map.on('load', function () {
+    // Add a GeoJSON source containing place coordinates and information.
+    map.addSource("places", {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": [
+
+
+            {
+                "type": "Feature",
+                "properties": {
+                    "description": "<h3>Venn</h3><img src='img/venn.jpg' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i>$3,445 - $3,695 and more</li><li><i class='fa fa-fw fa-clock-o'></i>49 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>680 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='https://thevenn.prospectportal.com/san-francisco-ca-apartments/venn/'>Site</a></li></ul>",
+                    "icon": "heart",
+                    "title": "Venn"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [ -122.424428, 37.771499 ]
+                }
+            },
+
+
+            {
+                "type": "Feature",
+                "properties": {
+                    "description": "<h3>Avalon Hayes Valley</h3><img src='img/hayes.jpg' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i>$3,600 and more</li><li><i class='fa fa-fw fa-clock-o'></i>47 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>646 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://avaloncommunities.com/california/san-francisco-apartments/avalon-hayes-valley/floor-plans'>Site</a></li></ul>",
+                    "icon": "heart",
+                    "title": "Avalon Hayes Valley"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -122.424393,
+                      37.775333
+                    ]
+                }
+            },
+
+            {
+                "type": "Feature",
+                "properties": {
+                    "description": "<h3>One henry adams</h3><img src='img/onehenry.png' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i>$3,550 and more</li><li><i class='fa fa-fw fa-clock-o'></i>19 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>646 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://www.equityapartments.com/san-francisco/design-district/one-henry-adams-apartments#/#bedroom-type-section-1'>Site</a></li></ul>",
+                    "icon": "heart",
+                    "title": "One henry adams"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                          -122.403969,
+                          37.769398
+                    ]
+                }
+            },
+
+            {
+                "type": "Feature",
+                "properties": {
+                    "description": "<h3>Mosso</h3><img src='img/mosso.jpg' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i> $3462 and more</li><li><i class='fa fa-fw fa-clock-o'></i>19 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>550 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://www.essexapartmenthomes.com/california/san-francisco-bay-area/san-francisco/mosso/floor-plans'>Site</a></li></ul>",
+                    "icon": "heart",
+                    "title": "Mosso"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                           -122.40419,37.780125
+                    ]
+                }
+            },
+
+
+
+             {
+                "type": "Feature",
+                "properties": {
+                    "description": "<h3>Potrero 1010 </h3><img src='img/potrero.jpg' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i> $3,235 and more</li><li><i class='fa fa-fw fa-clock-o'></i>22 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>586 sq - 792 sq. ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://www.equityapartments.com/san-francisco/potrero-hill/potrero-1010-apartments'>Site</a></li></ul>",
+                    "icon": "heart",
+                    "title": "Potrero 1010"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      -122.397052, 37.767062
+                    ]
+                }
+            }]
+        }
+    });
+
+      map.addSource("states", {
+            "type": "geojson",
+            "data": "realtor-eighborhoods.geojson"
+        });
+
+
+
+  map.addLayer({
+        "id": "state-fills",
+        "type": "fill",
+        "source": "states",
+        "layout": {},
+        "paint": {
+            "fill-color": "#627BC1",
+            "fill-opacity": 0.0
+        }
+    });
+
+    map.addLayer({
+        "id": "state-borders",
+        "type": "line",
+        "source": "states",
+        "layout": {
+                "line-cap": "round"
+            },
+            "paint": {
+                "line-color": "hsla(224, 68%, 33%, 0.19)",
+                "line-dasharray": [
+                    2,
+                    4
+                ]
+            }
+    });
+
+    map.addLayer({
+        "id": "state-fills-hover",
+        "type": "fill",
+        "source": "states",
+        "layout": {},
+        "paint": {
+            "fill-color": "#627BC1",
+            "fill-opacity": 0.05
+        },
+        "filter": ["==", "nbrhood", ""]
+    });
+
+
+    // Add a layer showing the places.
+    map.addLayer({
+        "id": "places",
+        "type": "symbol",
+        "source": "places",
+        "layout": {
+            "icon-image": "{icon}-15",
+            "icon-allow-overlap": true,
+             "text-size": 14,
+                "icon-offset": [
+                    0,
+                    0
+                ],
+                "text-transform": "uppercase",
+                "text-font": [
+                    "DIN Offc Pro Regular",
+                    "Arial Unicode MS Regular"
+                ],
+                "text-offset": [
+                    0,
+                    1.4
+                ],
+                "text-field": "{title}",
+                "text-letter-spacing": 0.2,
+                "text-max-width": 22
+        } ,
+        "paint": {
+                "text-color": "#1b27c4",
+                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-halo-width": 3.25,
+                "text-halo-blur": 0
+            }
+
+    });
+
+     map.on("mousemove", function(e) {
+        var features = map.queryRenderedFeatures(e.point, { layers: ["state-fills"] });
+        if (features.length) {
+            map.setFilter("state-fills-hover", ["==", "nbrhood", features[0].properties.nbrhood]);
+        } else {
+            map.setFilter("state-fills-hover", ["==", "nbrhood", ""]);
+        }
+    });
+
+    // Reset the state-fills-hover layer's filter when the mouse leaves the map
+    map.on("mouseout", function() {
+        map.setFilter("state-fills-hover", ["==", "nbrhood", ""]);
+    });
+
+});
+
+
+
+// When a click event occurs near a place, open a popup at the location of
+// the feature, with description HTML from its properties.
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['places'] });
+
+    if (!features.length) {
+        return;
+    }
+
+    var feature = features[0];
+
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    var popup = new mapboxgl.Popup()
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(feature.properties.description)
+        .addTo(map);
+});
+
+// Use the same approach as above to indicate that the symbols are clickable
+// by changing the cursor style to 'pointer'.
+map.on('mousemove', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['places'] });
+    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+});
+</script>
+
+
