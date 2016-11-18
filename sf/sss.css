@@ -1,0 +1,86 @@
+.slider {
+	width: 400px;
+}
+
+.sss {
+	height: 0;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.ssslide {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	overflow: hidden;
+}
+
+.slider::after {
+	content: "loading images";
+	display: block;
+	font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgb(234, 94, 151);
+    padding-bottom: 30px;
+    padding-left: 30px;
+    position: absolute;
+    top: 63px;
+    margin-bottom: 30px;
+
+}
+
+.slider::before {
+	content: '';
+	background: url(4.gif);
+	font-family: 'Open Sans', sans-serif;
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-size: contain;
+    position: absolute;
+    top: 40;
+}
+
+.ssslide img {
+	max-width: 100% !important;
+	height: auto  !important;
+	margin: 0  !important;
+	padding: 0  !important;
+	position: relative  !important;
+	display: block  !important;
+}
+
+.sssnext, .sssprev {
+	width: 25px;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	background: url('images/arr.png') no-repeat;
+}
+
+.sssprev {
+	left: 3%;
+	background-position: 0 50%;
+}
+
+.sssnext {
+	right: 3%;
+	background-position: -26px 50%;
+}
+
+.sssprev:hover, .sssnext:hover {
+	cursor: pointer;
+}
+
+

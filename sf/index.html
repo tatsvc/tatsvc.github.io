@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css" href="../css/social-circle.css" />
         <link rel="stylesheet" type="text/css" href="../css/mobile.css" />
         <link rel="stylesheet" type="text/css" href="../css/project.css" />
+        <link rel="stylesheet" type="text/css" href="sss.css" />
         <script src="../js/jquery-1.11.1.min.js"></script>
         <script src="../js/modernizr.custom.js"></script>
         <script src="../js/snap.svg-min.js"></script>
@@ -28,12 +29,10 @@
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 
 <style>
-
-
 
 .mapboxgl-popup-tip {
     width: 0;
@@ -42,7 +41,7 @@
     z-index: 1;
 }
     .mapboxgl-popup {
-        max-width: 400px;
+    max-width: 500px;
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     }
 
@@ -109,6 +108,8 @@ ul.facts i {
 
 
 <div id='map'></div>
+
+<script src="sss.js"></script>
 <script>
 
 
@@ -136,7 +137,7 @@ map.on('load', function () {
             {
                 "type": "Feature",
                 "properties": {
-                    "description": "<h3>Venn</h3><img src='img/venn.jpg' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i>$3,445 - $3,695 and more</li><li><i class='fa fa-fw fa-clock-o'></i>49 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>680 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='https://thevenn.prospectportal.com/san-francisco-ca-apartments/venn/'>Site</a></li></ul>",
+                    "description": "<h3>Venn</h3><div class='slider'><img src='img/venn.jpg' width='200px' height='auto' /><img src='img/venn2.jpg'  width='200px' height='auto' /><img src='img/venn3.jpg' /><img src='img/venn4.jpg' /></div><ul class='facts'><li><i class='fa fa-fw fa-money'></i>$3,445 - $3,695 and more</li><li><i class='fa fa-fw fa-clock-o'></i>49 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>680 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='https://thevenn.prospectportal.com/san-francisco-ca-apartments/venn/'>Site</a></li></ul>",
                     "icon": "heart",
                     "title": "Venn"
                 },
@@ -150,7 +151,7 @@ map.on('load', function () {
             {
                 "type": "Feature",
                 "properties": {
-                    "description": "<h3>Avalon Hayes Valley</h3><img src='img/hayes.jpg' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i>$3,600 and more</li><li><i class='fa fa-fw fa-clock-o'></i>47 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>646 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://avaloncommunities.com/california/san-francisco-apartments/avalon-hayes-valley/floor-plans'>Site</a></li></ul>",
+                    "description": "<h3>Avalon Hayes Valley</h3><div class='slider'><img src='img/hayes.jpg' width='200px' height='auto' /><img src='img/hayes2.jpg'  width='200px' height='auto' /><img src='img/hayes3.jpg' /><img src='img/hayes4.jpg' /></div><ul class='facts'><li><i class='fa fa-fw fa-money'></i>$3,600 and more</li><li><i class='fa fa-fw fa-clock-o'></i>47 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>646 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://avaloncommunities.com/california/san-francisco-apartments/avalon-hayes-valley/floor-plans'>Site</a></li></ul>",
                     "icon": "heart",
                     "title": "Avalon Hayes Valley"
                 },
@@ -166,7 +167,7 @@ map.on('load', function () {
             {
                 "type": "Feature",
                 "properties": {
-                    "description": "<h3>One henry adams</h3><img src='img/onehenry.png' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i>$3,550 and more</li><li><i class='fa fa-fw fa-clock-o'></i>19 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>646 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://www.equityapartments.com/san-francisco/design-district/one-henry-adams-apartments#/#bedroom-type-section-1'>Site</a></li></ul>",
+                    "description": "<h3>One henry adams</h3><div class='slider'><img src='img/onehenry.png' width='200px' height='auto' /><img src='img/onehenry2.png'  width='200px' height='auto' /><img src='img/onehenry3.png' /></div><ul class='facts'><li><i class='fa fa-fw fa-money'></i>$3,550 and more</li><li><i class='fa fa-fw fa-clock-o'></i>19 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>646 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://www.equityapartments.com/san-francisco/design-district/one-henry-adams-apartments#/#bedroom-type-section-1'>Site</a></li></ul>",
                     "icon": "heart",
                     "title": "One henry adams"
                 },
@@ -182,7 +183,7 @@ map.on('load', function () {
             {
                 "type": "Feature",
                 "properties": {
-                    "description": "<h3>Mosso</h3><img src='img/mosso.jpg' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i> $3462 and more</li><li><i class='fa fa-fw fa-clock-o'></i>19 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>550 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://www.essexapartmenthomes.com/california/san-francisco-bay-area/san-francisco/mosso/floor-plans'>Site</a></li></ul>",
+                    "description": "<h3>Mosso</h3><div class='slider'><img src='img/mosso.jpg' width='200px' height='auto' /><img src='img/mosso2.jpg'  width='200px' height='auto' /><img src='img/mosso3.jpg' /><img src='img/mosso4.jpg' /><img src='img/mosso5.jpg' /><img src='img/mosso6.jpg' /><img src='img/mosso7.jpg' /></div><ul class='facts'><li><i class='fa fa-fw fa-money'></i> $3462 and more</li><li><i class='fa fa-fw fa-clock-o'></i>19 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>550 or more sq ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://www.essexapartmenthomes.com/california/san-francisco-bay-area/san-francisco/mosso/floor-plans'>Site</a></li></ul>",
                     "icon": "heart",
                     "title": "Mosso"
                 },
@@ -199,7 +200,7 @@ map.on('load', function () {
              {
                 "type": "Feature",
                 "properties": {
-                    "description": "<h3>Potrero 1010 </h3><img src='img/potrero.jpg' width='100%'/><ul class='facts'><li><i class='fa fa-fw fa-money'></i> $3,235 and more</li><li><i class='fa fa-fw fa-clock-o'></i>22 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>586 sq - 792 sq. ft</li><li><i class='fa fa-fw fa-link'></i><a href='http://www.equityapartments.com/san-francisco/potrero-hill/potrero-1010-apartments'>Site</a></li></ul>",
+                    "description": "<h3>Potrero 1010 </h3><div class='slider'><img src='img/potrero.jpg' width='200px' height='auto' /><img src='img/potrero2.png'  width='200px' height='auto' /><img src='img/potrero3.png' /><img src='img/potrero4.png' /></div><ul class='facts'><li><i class='fa fa-fw fa-money'></i> $3,235 and more</li><li><i class='fa fa-fw fa-clock-o'></i>22 min walk</li><li><i class='fa fa-fw fa-arrows-alt'></i>586 sq - 792 sq. ft</li><li><i class='fa fa-fw fa-shopping-cart'></i>Wholefoods, Trader Joe's</li><li><i class='fa fa-fw fa-link'></i><a href='http://www.equityapartments.com/san-francisco/potrero-hill/potrero-1010-apartments'>Site</a></li></ul>",
                     "icon": "heart",
                     "title": "Potrero 1010"
                 },
@@ -217,6 +218,9 @@ map.on('load', function () {
             "type": "geojson",
             "data": "realtor-eighborhoods.geojson"
         });
+
+
+
 
 
 
@@ -330,7 +334,19 @@ map.on('click', function (e) {
         .setLngLat(feature.geometry.coordinates)
         .setHTML(feature.properties.description)
         .addTo(map);
+
+    $('.slider').sss({
+            slideShow : true, // Set to false to prevent SSS from automatically animating
+            startOn : 0, // Slide to display first. Uses array notation (0 = first slide).
+            transition : 100, // Length (in milliseconds) of the fade transition.
+            speed : 3500, // Slideshow speed in milliseconds.
+            showNav : true // Set to false to hide navigation arrows.
+            });
+
+
 });
+
+
 
 // Use the same approach as above to indicate that the symbols are clickable
 // by changing the cursor style to 'pointer'.
@@ -338,6 +354,8 @@ map.on('mousemove', function (e) {
     var features = map.queryRenderedFeatures(e.point, { layers: ['places'] });
     map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
 });
+
+
 </script>
 
 
