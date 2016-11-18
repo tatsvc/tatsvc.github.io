@@ -1,0 +1,145 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "Azure"
+      },
+      "geometry": {
+        "coordinates": [
+          -122.392945,
+          37.772794
+        ],
+        "type": "Point"
+      },
+      "id": "5d33290d4606273dd393f472906bfe3a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "Soma Square"
+      },
+      "geometry": {
+        "coordinates": [
+          -122.397783,
+          37.783815
+        ],
+        "type": "Point"
+      },
+      "id": "92b1baa464499cb023aa3258fac361ec"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "Jasper"
+      },
+      "geometry": {
+        "coordinates": [
+          -122.393749,
+          37.785873
+        ],
+        "type": "Point"
+      },
+      "id": "address.12947464293759050"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "Stripe"
+      },
+      "geometry": {
+        "coordinates": [
+          -122.391831,
+          37.77657
+        ],
+        "type": "Point"
+      },
+      "id": "address.1333644511051530"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "Fermont street apartments "
+      },
+      "geometry": {
+        "coordinates": [
+          -122.397762,
+          37.791267
+        ],
+        "type": "Point"
+      },
+      "id": "address.17537184487172800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "The Paramount"
+      },
+      "geometry": {
+        "coordinates": [
+          -122.401974,
+          37.786761
+        ],
+        "type": "Point"
+      },
+      "id": "address.3925852041849220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "Alchemy"
+      },
+      "geometry": {
+        "coordinates": [
+          -122.427032,
+          37.771815
+        ],
+        "type": "Point"
+      },
+      "id": "address.5452847446253660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "Etta"
+      },
+      "geometry": {
+        "coordinates": [
+          -122.421189,
+          37.787354
+        ],
+        "type": "Point"
+      },
+      "id": "address.5472875376911190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "Avalon Hayes Valley"
+      },
+      "geometry": {
+        "coordinates": [
+          -122.424393,
+          37.775333
+        ],
+        "type": "Point"
+      },
+      "id": "address.6600757582545340"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "One henry adams"
+      },
+      "geometry": {
+        "coordinates": [
+          -122.403969,
+          37.769398
+        ],
+        "type": "Point"
+      },
+      "id": "address.781937098572770"
+    }
+  ],
+  "type": "FeatureCollection"
+}
