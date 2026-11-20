@@ -479,14 +479,11 @@ main {
 
 .topbar.is-floating {
   position: fixed;
-  top: 0.75rem;
-  left: 0;
-  right: 0;
-  width: calc(100% - 2 * 0.75rem);
-  max-width: calc(var(--measure) + 2 * var(--gutter));
-  height: calc(1.875rem + 8px + 0.75rem);
-  margin-inline: auto;
-  border-radius: 16px;
+  top: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: calc(1.875rem + 8px + 1rem);
+  border-radius: 10px;
   background: rgb(255 255 255 / 0.72);
   -webkit-backdrop-filter: blur(16px) saturate(1.6);
   backdrop-filter: blur(16px) saturate(1.6);
@@ -506,14 +503,15 @@ main {
   pointer-events: auto;
 }
 
+/* Same spot on screen as at the top of the page (the bar is inset 0.5rem) */
 .topbar.is-floating .site-nav {
-  top: 0.375rem;
-  left: 1rem;
+  top: 0.5rem;
+  left: calc(var(--gutter) - 0.5rem);
 }
 
 .topbar.is-floating .lang-toggle {
-  top: 0.375rem;
-  right: 0.375rem;
+  top: 0.5rem;
+  right: calc(var(--gutter) - 0.5rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
