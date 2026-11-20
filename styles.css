@@ -166,11 +166,6 @@ a:hover {
   aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: 3px;
-  transition: opacity 0.2s ease;
-}
-
-.hero a:hover img {
-  opacity: 0.92;
 }
 
 .hero figcaption {
@@ -386,11 +381,6 @@ main {
   object-fit: cover;
   border-radius: 3px;
   margin-bottom: 0.6rem;
-  transition: opacity 0.2s ease;
-}
-
-.photos a:hover img {
-  opacity: 0.85;
 }
 
 .photos__title {
