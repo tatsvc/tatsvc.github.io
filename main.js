@@ -963,7 +963,7 @@
     '        /   /\\   \\   \\     \\\n' +
     '   ____/___/  \\___\\___\\_____\\____\n' +
     '\n%cHi, fellow detail person 👋\n\n' +
-    'This site is hand-written HTML, CSS, and a little JavaScript.\n' +
+    'This site is plain HTML, CSS, and a little JavaScript.\n' +
     'No framework, no build step.\n\n' +
     'Psst: try ↑ ↑ ↓ ↓ ← → ← → B A\n\n' +
     'Say hi: tatiana.van.campenhout@gmail.com',
