@@ -611,6 +611,58 @@
 
   let sheet = null;
 
+  // Slide the sheet down, then close the dialog
+  function closeSheet() {
+    if (!sheet || !sheet.open) return;
+    if (reduceMotion.matches) return sheet.close();
+    sheet.style.transition = '';
+    sheet.style.transform = 'translateY(100%)';
+    setTimeout(() => sheet.close(), 260);
+  }
+
+  // Drag the sheet down to dismiss it. Starts from the header, or from the
+  // card when it's scrolled to the top, so scrolling the card still works.
+  function enableDrag() {
+    let startY = null;
+    let lastY = 0;
+    let lastT = 0;
+    let velocity = 0;
+    const body = () => sheet.querySelector('.sheet__body');
+
+    sheet.addEventListener('touchstart', (event) => {
+      const inHeader = event.target.closest('.sheet__header');
+      if (!inHeader && body().scrollTop > 0) return;
+      startY = lastY = event.touches[0].clientY;
+      lastT = event.timeStamp;
+      velocity = 0;
+    }, { passive: true });
+
+    sheet.addEventListener('touchmove', (event) => {
+      if (startY === null) return;
+      const y = event.touches[0].clientY;
+      const dy = y - startY;
+      if (dy <= 0) {
+        sheet.style.transform = '';
+        return;
+      }
+      event.preventDefault(); // dragging the sheet, not scrolling the card
+      velocity = (y - lastY) / Math.max(1, event.timeStamp - lastT);
+      lastY = y;
+      lastT = event.timeStamp;
+      sheet.style.transition = 'none';
+      sheet.style.transform = `translateY(${dy}px)`;
+    }, { passive: false });
+
+    sheet.addEventListener('touchend', () => {
+      if (startY === null) return;
+      const dy = lastY - startY;
+      startY = null;
+      sheet.style.transition = '';
+      if (dy > 120 || (dy > 20 && velocity > 0.5)) closeSheet();
+      else sheet.style.transform = '';
+    });
+  }
+
   function openSheet(trigger) {
     const key = trigger.dataset.card;
     const ui = CARD_UI[currentLang];
@@ -620,37 +672,52 @@
       // Tapping the dimmed backdrop closes it (the click lands on the
       // <dialog> itself, not on its contents)
       sheet.addEventListener('click', (event) => {
-        if (event.target === sheet) sheet.close();
+        if (event.target === sheet) closeSheet();
+      });
+      sheet.addEventListener('cancel', (event) => {
+        event.preventDefault();
+        closeSheet();
       });
       sheet.addEventListener('close', () => {
         const video = sheet.querySelector('video');
         if (video) video.pause();
+        sheet.style.transform = '';
       });
+      enableDrag();
       document.body.append(sheet);
     }
 
-    const inner = el('div', 'sheet__inner');
+    const header = el('div', 'sheet__header');
     const close = el('button', 'sheet__close');
     close.type = 'button';
     close.setAttribute('aria-label', ui.close);
     close.innerHTML = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 3.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
-    close.addEventListener('click', () => sheet.close());
+    close.addEventListener('click', closeSheet);
+    header.append(el('div', 'sheet__handle'), close);
 
+    const body = el('div', 'sheet__body');
+    // Focus lands here on open, instead of ringing the close button
+    body.tabIndex = -1;
+    body.autofocus = true;
     const card = buildCard(key, currentLang);
     card.removeAttribute('aria-hidden'); // in the sheet, the card is the content
     card.classList.add('hovercard--sheet');
-    inner.append(el('div', 'sheet__handle'), close, card);
+    body.append(card);
 
+    const parts = [header, body];
     if (trigger.href) {
+      const footer = el('div', 'sheet__footer');
       const cta = el('a', 'sheet__cta', (CARDS[key].type === 'post' ? ui.viewOnX : ui.open) + ' ↗');
       cta.href = trigger.href;
-      inner.append(cta);
+      footer.append(cta);
+      parts.push(footer);
     }
 
-    sheet.replaceChildren(inner);
+    sheet.replaceChildren(...parts);
     sheet.setAttribute('aria-label', trigger.textContent.trim());
+    sheet.style.transform = '';
     sheet.showModal();
-    close.focus();
+    body.focus({ preventScroll: true });
 
     const video = sheet.querySelector('video');
     if (video && !reduceMotion.matches) video.play().catch(() => {});
