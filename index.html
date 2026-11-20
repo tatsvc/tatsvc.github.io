@@ -51,17 +51,21 @@
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
-  <!-- Top-left: the two pages. aria-current marks the one you're on. -->
-  <nav class="site-nav" aria-label="Site" data-i18n-label="navLabel">
-    <a href="./" aria-current="page" data-i18n="navExperience">Experience</a>
-    <a href="about/" data-i18n="navAbout">About</a>
-  </nav>
+  <!-- Top bar. Once you scroll down, it floats back in when you scroll up
+       (main.js). -->
+  <div class="topbar">
+    <!-- Top-left: the two pages. aria-current marks the one you're on. -->
+    <nav class="site-nav" aria-label="Site" data-i18n-label="navLabel">
+      <a href="./" aria-current="page" data-i18n="navExperience">Experience</a>
+      <a href="about/" data-i18n="navAbout">About</a>
+    </nav>
 
-  <!-- Language toggle, top-right: a two-option switch with a sliding pill.
-       Hidden until main.js has loaded. -->
-  <div class="lang-toggle" role="group" aria-label="Language" data-i18n-label="langLabel" data-active="en">
-    <button type="button" data-lang="en" lang="en" aria-pressed="true">EN<span class="visually-hidden"> English</span></button>
-    <button type="button" data-lang="nl" lang="nl" aria-pressed="false">NL<span class="visually-hidden"> Nederlands</span></button>
+    <!-- Language toggle, top-right: a two-option switch with a sliding pill.
+         Hidden until main.js has loaded. -->
+    <div class="lang-toggle" role="group" aria-label="Language" data-i18n-label="langLabel" data-active="en">
+      <button type="button" data-lang="en" lang="en" aria-pressed="true">EN<span class="visually-hidden"> English</span></button>
+      <button type="button" data-lang="nl" lang="nl" aria-pressed="false">NL<span class="visually-hidden"> Nederlands</span></button>
+    </div>
   </div>
 
   <header class="wrap intro">
