@@ -603,6 +603,51 @@
 
 
   /* ------------------------------------------------------------------------
+     Top bar: once you've scrolled past it, it floats back in when you scroll
+     up and tucks away when you scroll down. Small movements are ignored, so
+     it doesn't flicker.
+     ------------------------------------------------------------------------ */
+
+  const topbar = document.querySelector('.topbar');
+  if (topbar) {
+    let lastY = window.scrollY;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const y = Math.max(0, window.scrollY);
+      const height = topbar.offsetHeight;
+
+      if (y <= 0) {
+        // Back at the top: the bar sits in the page again
+        topbar.classList.remove('is-floating', 'is-shown');
+      } else if (y > height * 2) {
+        if (!topbar.classList.contains('is-floating')) {
+          topbar.classList.add('is-floating');
+          topbar.getBoundingClientRect(); // start hidden, so it slides in
+        }
+        if (y < lastY - 6) topbar.classList.add('is-shown');
+        else if (y > lastY + 6) topbar.classList.remove('is-shown');
+        else return; // too small to count; keep lastY as the reference
+      } else if (!topbar.classList.contains('is-shown')) {
+        topbar.classList.remove('is-floating');
+      }
+      lastY = y;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+
+    // Tabbing into the bar always brings it into view
+    topbar.addEventListener('focusin', () => topbar.classList.add('is-shown'));
+  }
+
+
+  /* ------------------------------------------------------------------------
      Bottom sheet: on phones and tablets (no hover), tapping a link with a
      card opens the same card in a sheet from the bottom of the screen, with
      a button to follow the link. A <dialog>, so focus, Escape and screen
