@@ -630,7 +630,7 @@
       } else if (!past && floating && topbar.classList.contains('is-shown')) {
         topbar.classList.remove('is-shown');
         // After the fade, put the links back in the page
-        leaveTimer = setTimeout(() => topbar.classList.remove('is-floating'), 300);
+        leaveTimer = setTimeout(() => topbar.classList.remove('is-floating'), 500);
       }
     };
 
