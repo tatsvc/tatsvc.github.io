@@ -1,0 +1,796 @@
+/* ==========================================================================
+   tatiana.be — styles.css
+
+   1. Fonts
+   2. Tokens
+   3. Base
+   4. Intro + hero photo
+   5. Sections (résumé rows, lists, photo grid)
+   6. Language toggle, footer, utilities
+   7. Inter comparison version (?type=inter): delete once you've picked
+   ========================================================================== */
+
+
+/* 1. Fonts ------------------------------------------------------------------
+   Self-hosted, all SIL Open Font License (see assets/fonts/LICENSE-*.txt).
+   - Bricolage Grotesque: body text. One variable file covers every weight.
+   - Instrument Serif: name and headings. Only comes in one weight, so it's
+     kept to large sizes, where it looks its best.
+   - Inter: only used by the comparison version in section 7. Browsers only
+     download a font when something uses it, so it costs nothing otherwise. */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("assets/fonts/bricolage-grotesque-variable.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("assets/fonts/instrument-serif-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("assets/fonts/instrument-serif-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter-variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* 2. Tokens -----------------------------------------------------------------
+   Black on white. Light mode only. */
+
+:root {
+  --bg: #ffffff;
+  --ink: #061b31;     /* deep navy, 17.4:1 on white */
+  --muted: #64748d;   /* slate, 4.75:1 on white, passes WCAG AA */
+  --rule: #e6e9ee;    /* hairlines, a very light tint of the slate */
+  --underline: #c1c8d3;
+
+  --font: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+
+  --measure: 44rem;   /* width of the page column */
+  --gutter: 1.25rem;  /* side padding on small screens */
+}
+
+
+/* 3. Base ------------------------------------------------------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 100%;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h1, h2, h3, p, ul, figure {
+  margin: 0;
+}
+
+h3 {
+  font-size: inherit;
+  font-weight: 500;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: var(--underline);
+  transition: text-decoration-color 0.15s ease;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Centred page column */
+.wrap {
+  width: 100%;
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+
+/* 4. Intro + hero ---------------------------------------------------------- */
+
+.intro {
+  padding-block: 6rem 2.5rem;
+}
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 2rem + 3.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.hero a {
+  position: relative;
+  display: block;
+}
+
+.hero img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.hero a:hover img {
+  opacity: 0.92;
+}
+
+.hero figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+/* About page: round photo next to the heading and intro line */
+.intro--portrait {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.portrait {
+  flex-shrink: 0;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* From 48em the photo sits in the same 10rem column as the section headings
+   below, so the heading lines up with the section text. */
+@media (min-width: 48em) {
+  .intro--portrait {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    column-gap: 2rem;
+  }
+
+  .portrait {
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+}
+
+.lede {
+  max-width: 34rem;
+  font-size: 1.125rem;
+  text-wrap: balance;
+}
+
+
+/* 5. Sections --------------------------------------------------------------
+   Small screens: heading above content. From ~768px: heading in a narrow
+   left column, like the row labels on a classic résumé. */
+
+main {
+  padding-top: 3rem;
+}
+
+.section {
+  padding-block: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.section h2 {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+@media (min-width: 48em) {
+  .section {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    column-gap: 2rem;
+    /* Heading sits on the same baseline as the first line beside it */
+    align-items: baseline;
+  }
+
+  .section h2 {
+    margin: 0;
+  }
+}
+
+/* A line with something on the left and dates on the right */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+/* Dates: a fixed-width column on the right, left-aligned so every range
+   starts at the same spot. Wide enough for "2021 — 2026". */
+.row > .muted:last-child {
+  flex-shrink: 0;
+  min-width: 5.85em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.org + .org {
+  margin-top: 1.75rem;
+}
+
+/* Time at each company (small line under the company name) */
+.tenure {
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums; /* the live seconds on hover don't wobble */
+}
+
+.no-js .tenure {
+  display: none;
+}
+
+.roles {
+  margin-top: 0.35rem;
+}
+
+.tenure + .roles {
+  margin-top: 0.6rem;
+}
+
+.roles li {
+  padding-block: 0.15rem;
+}
+/* Simple vertical list: education, things I make */
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Running text (about page) */
+.prose p + p {
+  margin-top: 1em;
+}
+
+/* A small photo inside running text, e.g. crevasse rescue on the about page */
+.inline-photo {
+  max-width: 16rem;
+  margin-top: 1.5rem;
+}
+
+.inline-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.inline-photo figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+/* Contact links in a row (wraps on small screens) */
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+/* Photo grid: 2 × 2, spanning the full column width */
+.photos {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 1rem;
+  margin-top: 2rem;
+}
+
+.photos a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+/* Camera settings (data-exif): a small pill that follows the cursor over a
+   photo. main.js moves it with --x and --y. */
+.exif-pill {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 0 1px rgb(20 50 110 / 0.06),
+    0 4px 12px -4px rgb(30 64 140 / 0.12);
+  color: var(--ink);
+  font-size: 0.6875rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+  opacity: 0;
+  scale: 0.96;
+  /* Position follows the cursor instantly; only the fade and scale animate */
+  transform: translate(calc(var(--x, 0px) + 14px), calc(var(--y, 0px) + 18px));
+  transform-origin: top left;
+  transition: opacity 0.15s ease, scale 0.15s ease;
+}
+
+.exif-pill.is-open {
+  opacity: 1;
+  scale: 1;
+}
+
+.photos img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-bottom: 0.6rem;
+  transition: opacity 0.2s ease;
+}
+
+.photos a:hover img {
+  opacity: 0.85;
+}
+
+.photos__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  line-height: 1.15;
+}
+
+.photos a:hover .photos__title {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+
+/* 6. Language toggle, footer, utilities ------------------------------------ */
+
+/* A pill-shaped track with a navy "thumb" that slides under the active
+   language. data-active="en" | "nl" is set by main.js. */
+.lang-toggle {
+  position: absolute;
+  top: 1rem;
+  right: var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* The sliding thumb */
+.lang-toggle::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  border-radius: 999px;
+  background: var(--ink);
+  transition: transform 0.25s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.lang-toggle[data-active="nl"]::before {
+  transform: translateX(100%);
+}
+
+.lang-toggle button {
+  position: relative; /* above the thumb */
+  font: inherit;
+  letter-spacing: inherit;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: 999px;
+  min-width: 2.75rem;
+  min-height: 1.875rem;
+  padding: 0 0.6rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lang-toggle button:hover {
+  color: var(--ink);
+}
+
+.lang-toggle button[aria-pressed="true"] {
+  color: var(--bg);
+}
+
+/* Page links, top-left, on the same line as the language toggle */
+.site-nav {
+  position: absolute;
+  top: 1rem;
+  left: var(--gutter);
+  display: flex;
+  gap: 1.25rem;
+  min-height: calc(1.875rem + 8px); /* toggle height, so the text centres with it */
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+/* Underline under the current page, sliding to the hovered link (main.js
+   sets --pill-x and --pill-w). Same weight and offset as link underlines. */
+.site-nav::before {
+  content: "";
+  position: absolute;
+  top: calc(50% + 0.78em);
+  left: 0;
+  width: var(--pill-w, 0);
+  height: 1px;
+  background: currentColor;
+  color: var(--ink);
+  transform: translateX(var(--pill-x, 0));
+}
+
+.site-nav.is-ready::before {
+  transition:
+    transform 0.3s cubic-bezier(0.3, 0.7, 0.4, 1),
+    width 0.3s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+}
+
+/* Paw prints from Marmot and Jade (main.js): each one pops in, then fades */
+.paw {
+  position: absolute;
+  z-index: 30;
+  width: 15px;
+  height: 15px;
+  margin: -7.5px 0 0 -7.5px;
+  pointer-events: none;
+  transform: rotate(var(--turn));
+  animation: paw 1.8s ease both;
+}
+
+.paw svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.paw--marmot {
+  color: #1d2026;
+}
+
+.paw--jade {
+  color: #7b8492;
+}
+
+@keyframes paw {
+  0% { opacity: 0; scale: 0.6; }
+  12% { opacity: 0.8; scale: 1; }
+  65% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+/* Konami code snow (main.js) */
+.snow {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* "Goeiedag!" under the language toggle, with a tiny Belgian flag */
+.toast {
+  position: absolute;
+  z-index: 30;
+  right: var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-right: 0.25rem; /* lines the text up under the toggle's NL */
+  color: var(--ink);
+  font-size: 0.75rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
+  pointer-events: none;
+}
+
+.toast::before {
+  content: "";
+  width: 0.75rem;
+  height: 0.5rem;
+  border-radius: 1px;
+  background: linear-gradient(to right, #000 33.3%, #fdda24 33.3% 66.6%, #ef3340 66.6%);
+}
+
+.toast.is-open {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hover cards (built by main.js): a small preview under a hovered link */
+.hovercard {
+  position: absolute;
+  z-index: 20;
+  width: 20rem;
+  max-width: calc(100vw - 24px);
+  overflow: hidden;
+  background: var(--bg);
+  border-radius: 12px;
+  /* No border: the first layer is a faint ring so the top edge doesn't
+     disappear into the white page */
+  box-shadow:
+    0 0 0 1px rgb(20 50 110 / 0.05),
+    0 1px 1px rgb(20 50 110 / 0.03),
+    0 2px 4px -1px rgb(20 50 110 / 0.03),
+    0 12px 24px -8px rgb(30 64 140 / 0.04),
+    0 24px 48px -12px rgb(40 80 170 / 0.06);
+  cursor: pointer;
+  /* Closed: a little lower and transparent. Leaving uses this transition,
+     so the card slides down as it fades out (kept in sync with hideCard) */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.14s ease-in, transform 0.16s ease-in;
+}
+
+/* Open: slides up into place as it fades in */
+.hovercard.is-open {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.2s ease-out, transform 0.32s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hovercard {
+    transform: none;
+  }
+}
+
+.hovercard__media {
+  display: block;
+  width: 100%;
+  max-height: 15rem;
+  object-fit: cover;
+  background: var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.hovercard--post .hovercard__media {
+  max-height: 11rem;
+}
+
+.hovercard--photo,
+.hovercard--cover {
+  width: 13rem;
+}
+
+.hovercard--photo {
+  cursor: default;
+}
+
+.hovercard--photo .hovercard__media,
+.hovercard--cover .hovercard__media {
+  max-height: none;
+}
+
+/* Plain text that opens a card: underlined like a link */
+.card-hint {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: var(--underline);
+  transition: text-decoration-color 0.15s ease;
+  cursor: default;
+}
+
+.card-hint:hover {
+  text-decoration-color: currentColor;
+}
+
+.hovercard__body {
+  padding: 0.875rem 1rem 1rem;
+}
+
+.hovercard--post .hovercard__text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  overflow: hidden;
+}
+
+.hovercard__site,
+.hovercard__handle,
+.hovercard__footer {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.hovercard__title {
+  margin: 0.2rem 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  line-height: 1.1;
+}
+
+.hovercard__text {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.hovercard__author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.2;
+}
+
+.hovercard__author strong {
+  font-weight: 600;
+}
+
+.hovercard__avatar {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+}
+
+.hovercard__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.hovercard__cta {
+  color: var(--ink);
+}
+
+/* Without JS the toggle can't work, so don't show it */
+.no-js .lang-toggle {
+  visibility: hidden;
+}
+
+.footer {
+  padding-block: 2rem 3rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8125rem;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: var(--gutter);
+  z-index: 10;
+  padding: 0.4rem 0.75rem;
+  background: var(--ink);
+  color: var(--bg);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+/* Read by screen readers, invisible on screen */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   7. INTER COMPARISON VERSION
+   The previous all-Inter look, shown with ?type=inter (main.js adds the
+   class). Delete this block and the ?type= line in main.js once you've
+   picked; delete the Inter @font-face too if you don't keep it.
+   ========================================================================== */
+
+.type-inter {
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: var(--font);
+}
+
+.type-inter .name {
+  font-size: clamp(1.75rem, 1.3rem + 2vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+
+.type-inter .section h2 {
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--muted);
+  padding-top: 0.15rem;
+}
+
+.type-inter .photos__title {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}

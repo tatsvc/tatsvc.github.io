@@ -1,22 +1,210 @@
----
-layout: default
-title: Tatiana.be
----
+<!doctype html>
+<!--
+  tatiana.be — one-page résumé.
+  Plain HTML + styles.css + main.js. No build step: edit and refresh.
 
+  Text marked with data-i18n="key" is swapped by main.js when the EN / NL
+  toggle is used (data-i18n-alt does the same for image alt text). The
+  English here is the fallback and what search engines see, so keep it in
+  sync with COPY.en in main.js.
 
-	<div class="content-wrap">
-				<!-- main content -->
-			<div class='main-content center margin-top4'>
+  Photos: assets/photos/, each as a JPEG in two widths (srcset lets the
+  browser pick). To swap one, export the same sizes with the same file names.
+-->
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-			<section class="grid-wrap">
-				<ul class="grid swipe-down" id="grid">
+  <title data-i18n="homeTitle">Tatiana Van Campenhout · Head of Web Presence, Stripe</title>
+  <meta name="description" content="Tatiana Van Campenhout is Head of Web Presence at Stripe. Designer and photographer based in Seattle, originally from Belgium.">
+  <link rel="canonical" href="https://tatiana.be/">
 
-				  {% for post in site.posts %}
-				    <li>
-				      <li class=' padding1'><a href="{{baseurl}}{{post.permalink}}"><img width='100%' src="{{baseurl}}{{ post.cardimg }}" alt="dummy"></a></li>
-				    </li>
-				  {% endfor %}
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
 
-				</ul>
-			</section>
-			</div>
+  <!-- Social previews (Open Graph is used by LinkedIn, Slack, iMessage…) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tatiana.be/">
+  <meta property="og:title" content="Tatiana Van Campenhout">
+  <meta property="og:description" content="Head of Web Presence at Stripe. Seattle, WA. Originally from Belgium.">
+  <meta property="og:image" content="https://tatiana.be/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Prusik Peak among golden larches, with the name Tatiana Van Campenhout">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="nl_BE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tatiana Van Campenhout">
+  <meta name="twitter:description" content="Head of Web Presence at Stripe. Seattle, WA. Originally from Belgium.">
+  <meta name="twitter:image" content="https://tatiana.be/assets/og-image.jpg">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <!-- Top-left: the two pages. aria-current marks the one you're on. -->
+  <nav class="site-nav" aria-label="Site" data-i18n-label="navLabel">
+    <a href="./" aria-current="page" data-i18n="navExperience">Experience</a>
+    <a href="about/" data-i18n="navAbout">About</a>
+  </nav>
+
+  <!-- Language toggle, top-right: a two-option switch with a sliding pill.
+       Hidden until main.js has loaded. -->
+  <div class="lang-toggle" role="group" aria-label="Language" data-i18n-label="langLabel" data-active="en">
+    <button type="button" data-lang="en" lang="en" aria-pressed="true">EN<span class="visually-hidden"> English</span></button>
+    <button type="button" data-lang="nl" lang="nl" aria-pressed="false">NL<span class="visually-hidden"> Nederlands</span></button>
+  </div>
+
+  <header class="wrap intro">
+    <h1 class="name">Tatiana Van Campenhout</h1>
+    <p data-i18n="headerRole">Head of Web Presence, Stripe</p>
+    <p class="muted" data-i18n="location">Seattle, WA. Originally from Belgium.</p>
+  </header>
+
+  <!-- Hero photo. fetchpriority="high" because it's the biggest thing on screen. -->
+  <figure class="wrap hero">
+    <a href="https://tats.exposure.co/enchantments-larches" data-exif="Fujifilm X-T5 · 16mm · f/1.4 · 1/4000s · ISO 400">
+      <img src="assets/photos/prusik-1400.jpg"
+           srcset="assets/photos/prusik-800.jpg 800w, assets/photos/prusik-1400.jpg 1400w"
+           sizes="(min-width: 48em) 44rem, calc(100vw - 2.5rem)" width="1400" height="933"
+           alt="Prusik Peak reflected in an alpine lake, framed by golden larches"
+           data-i18n-alt="heroAlt" fetchpriority="high">
+    </a>
+    <figcaption data-i18n="heroCaption">Prusik Peak, The Enchantments, October 2026</figcaption>
+  </figure>
+
+  <main id="main" class="wrap">
+
+    <section class="section" aria-labelledby="work-heading">
+      <h2 id="work-heading" data-i18n="work">Work</h2>
+      <div>
+        <div class="org">
+          <div class="row">
+            <h3><a href="https://stripe.com" data-card="stripe">Stripe</a></h3>
+          </div>
+          <!-- main.js fills this in: "9 years, 9 months, 28 days" etc. -->
+          <p class="muted tenure"><time datetime="2017-01-23" data-since="2017-01-23"></time></p>
+          <!-- Newest role first -->
+          <ul class="roles">
+            <li class="row">
+              <!-- Hovering shows a card with the homepage launch post (main.js, CARDS) -->
+              <a href="https://x.com/tatsvc/status/2016926078762438898" data-card="homepageTweet" data-i18n="roleHead">Head of Web Presence</a>
+              <span class="muted">2026&thinsp;—&thinsp;<span data-i18n="present">now</span></span>
+            </li>
+            <li class="row"><a href="https://x.com/lil_dill/status/2082565124611858812" data-card="careersTweet" data-i18n="roleDesignManager">Design Manager</a><span class="muted">2021&thinsp;—&thinsp;2026</span></li>
+            <li class="row"><a href="https://dribbble.com/shots/13677717-Connect-Microsite" data-card="connect" data-i18n="roleStaff">Staff Designer</a><span class="muted">2020&thinsp;—&thinsp;2021</span></li>
+            <li class="row"><a href="https://dribbble.com/shots/14184770-Stripe-Checkout-Landing-Page" data-card="checkout" data-i18n="roleSenior">Senior Designer</a><span class="muted">2018&thinsp;—&thinsp;2020</span></li>
+            <li class="row"><a href="https://dribbble.com/shots/6006728-Stripe-jobs-page" data-card="jobs" data-i18n="roleDesigner">Designer</a><span class="muted">2017&thinsp;—&thinsp;2018</span></li>
+          </ul>
+        </div>
+
+        <div class="org">
+          <div class="row">
+            <h3><a href="https://www.mapbox.com" data-card="mapbox">Mapbox</a></h3>
+          </div>
+          <!-- Same as Stripe, but with an end date (data-until) -->
+          <p class="muted tenure"><span data-since="2014-01-30" data-until="2017-01-06"></span></p>
+          <ul class="roles">
+            <li class="row"><a href="https://dribbble.com/shots/2175087-Products" data-card="mapboxProducts" data-i18n="roleMapbox">Design Lead, Web &amp; Brand</a><span class="muted">2014&thinsp;—&thinsp;2017</span></li>
+            <li class="row"><span data-i18n="roleIntern">Design Intern</span><span class="muted">2014&thinsp;—&thinsp;2014</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="edu-heading">
+      <h2 id="edu-heading" data-i18n="education">Education</h2>
+      <!-- Newest first, like Work -->
+      <ul class="stack">
+        <li class="row">
+          <span>
+            <span data-i18n="eduBachelor">Bachelor’s in Development &amp; Design</span><br>
+            <span class="muted">Howest Devine, <span data-i18n="belgium">Belgium</span></span>
+          </span>
+          <span class="muted">2011&thinsp;—&thinsp;2014</span>
+        </li>
+        <li class="row">
+          <span>
+            <span data-i18n="eduMaster">Master’s in Graphic Design</span><br>
+            <span class="muted">LUCA School of Arts, <span data-i18n="belgium">Belgium</span></span>
+          </span>
+          <span class="muted">2007&thinsp;—&thinsp;2011</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="make-heading">
+      <h2 id="make-heading" data-i18n="make">Things I make</h2>
+      <ul class="stack">
+        <li>
+          <a href="https://bear-necessities.app" data-card="bear">Bear Necessities</a><br>
+          <span class="muted" data-i18n="bearDesc">A backcountry trip planning app</span>
+        </li>
+        <li>
+          <span data-i18n="crafts">Crafts</span><br>
+          <span class="muted" data-i18n-html="craftsDesc"><a href="https://x.com/tatsvc/status/1463738675540332551" data-card="ornamentsTweet">Custom ornaments</a> and <a href="https://x.com/tatsvc/status/1357166036835946499" data-card="sweaterTweet">embroidered sweaters</a></span>
+        </li>
+        <!-- Last, so the photo grid below reads as a preview of the blog -->
+        <li>
+          <a href="https://tats.exposure.co/" data-card="pnw">Tatiana in the PNW</a><br>
+          <span class="muted" data-i18n="photoDesc">Photo blog about hiking and climbing in the Pacific Northwest</span>
+        </li>
+      </ul>
+
+      <!-- A few trips from the photo blog. Each links to its story. -->
+      <ul class="photos">
+        <li>
+          <a href="https://tats.exposure.co/snowfield-peak" data-exif="Fujifilm X-T5 · 56mm · f/1.2 · 1/2000s · ISO 640">
+            <img src="assets/photos/snowfield-1000.jpg" srcset="assets/photos/snowfield-600.jpg 600w, assets/photos/snowfield-1000.jpg 1000w" sizes="(min-width: 48em) 21.5rem, calc(50vw - 1.75rem)" width="1000" height="666" loading="lazy" decoding="async"
+                   alt="Snowfield Peak’s snowy summit against a pink and purple dusk sky" data-i18n-alt="snowfieldAlt">
+            <span class="photos__title">Snowfield Peak</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://tats.exposure.co/glacier-peak" data-exif="Fujifilm X-T5 · 23mm · f/1.4 · 1/4000s · ISO 250">
+            <img src="assets/photos/glacier-peak-1000.jpg" srcset="assets/photos/glacier-peak-600.jpg 600w, assets/photos/glacier-peak-1000.jpg 1000w" sizes="(min-width: 48em) 21.5rem, calc(50vw - 1.75rem)" width="1000" height="666" loading="lazy" decoding="async"
+                   alt="Golden light over snowy ridges near Glacier Peak" data-i18n-alt="glacierAlt">
+            <span class="photos__title">Glacier Peak</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://tats.exposure.co/mt-olympus" data-exif="Fujifilm X-T5 · 23mm · f/1.4 · 1/8000s · ISO 1600">
+            <img src="assets/photos/mt-olympus-1000.jpg" srcset="assets/photos/mt-olympus-600.jpg 600w, assets/photos/mt-olympus-1000.jpg 1000w" sizes="(min-width: 48em) 21.5rem, calc(50vw - 1.75rem)" width="1000" height="666" loading="lazy" decoding="async"
+                   alt="Blue Glacier on Mt. Olympus, the peaks lit pink by first light" data-i18n-alt="olympusAlt">
+            <span class="photos__title">Mt. Olympus</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://tats.exposure.co/rainier-summit" data-exif="Fujifilm X-T4 · 56mm · f/1.2 · 1/4000s · ISO 800">
+            <img src="assets/photos/rainier-1000.jpg" srcset="assets/photos/rainier-600.jpg 600w, assets/photos/rainier-1000.jpg 1000w" sizes="(min-width: 48em) 21.5rem, calc(50vw - 1.75rem)" width="1000" height="666" loading="lazy" decoding="async"
+                   alt="Mt. Adams rising above a sea of clouds at sunrise, seen from high on Mt. Rainier" data-i18n-alt="rainierAlt">
+            <span class="photos__title">Mt. Rainier</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" data-i18n="contact">Contact</h2>
+      <ul class="inline">
+        <li><a href="mailto:tatiana.van.campenhout@gmail.com">tatiana.van.campenhout@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/zatiana" data-card="instagram">Instagram</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer muted">
+    <p>© 2026</p>
+  </footer>
+</body>
+</html>

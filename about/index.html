@@ -1,0 +1,116 @@
+<!doctype html>
+<!--
+  tatiana.be/about/ — a short "about me" page, next to the résumé on the
+  home page. Shares styles.css and main.js with the home page (paths start
+  with ../ because this file lives one folder down).
+
+  DRAFT copy, to be rewritten by Tatiana.
+-->
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title data-i18n="aboutTitle">About · Tatiana Van Campenhout</title>
+  <meta name="description" content="About Tatiana Van Campenhout: Belgian designer in Seattle, Head of Web Presence at Stripe, and weekend mountaineer and photographer.">
+  <link rel="canonical" href="https://tatiana.be/about/">
+
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://tatiana.be/about/">
+  <meta property="og:title" content="About Tatiana Van Campenhout">
+  <meta property="og:description" content="Belgian designer in Seattle. Head of Web Presence at Stripe.">
+  <meta property="og:image" content="https://tatiana.be/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Prusik Peak among golden larches, with the name Tatiana Van Campenhout">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="nl_BE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Tatiana Van Campenhout">
+  <meta name="twitter:description" content="Belgian designer in Seattle. Head of Web Presence at Stripe.">
+  <meta name="twitter:image" content="https://tatiana.be/assets/og-image.jpg">
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+
+  <link rel="preload" href="../assets/fonts/bricolage-grotesque-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Site" data-i18n-label="navLabel">
+    <a href="../" data-i18n="navExperience">Experience</a>
+    <a href="./" aria-current="page" data-i18n="navAbout">About</a>
+  </nav>
+
+  <div class="lang-toggle" role="group" aria-label="Language" data-i18n-label="langLabel" data-active="en">
+    <button type="button" data-lang="en" lang="en" aria-pressed="true">EN<span class="visually-hidden"> English</span></button>
+    <button type="button" data-lang="nl" lang="nl" aria-pressed="false">NL<span class="visually-hidden"> Nederlands</span></button>
+  </div>
+
+  <header class="wrap intro intro--portrait">
+    <img class="portrait"
+         src="../assets/photos/tatiana-240.jpg"
+         srcset="../assets/photos/tatiana-240.jpg 240w, ../assets/photos/tatiana-480.jpg 480w"
+         sizes="(min-width: 48em) 8.5rem, 5.5rem" width="480" height="480"
+         alt="Tatiana in a white beanie and round sunglasses, holding pink skis on a snowy summit"
+         data-i18n-alt="portraitAlt">
+    <div>
+      <h1 class="name" data-i18n="aboutHeading">Hi, I’m Tatiana</h1>
+      <p class="lede" data-i18n-html="aboutLede">A Belgian designer living in Seattle with <span class="card-hint" data-card="cats">Marmot and Jade</span>, my two beloved cats.</p>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+
+    <!-- Paragraphs with links use data-i18n-html: main.js swaps the whole
+         paragraph, links included, so keep the links in COPY in sync. -->
+    <section class="section" aria-labelledby="work-heading">
+      <h2 id="work-heading" data-i18n="work">Work</h2>
+      <div class="prose">
+        <p data-i18n-html="workP1">I’ve been at Stripe for nine years and lead web presence, which means the team behind <a href="https://stripe.com" data-card="stripe">stripe.com</a>. I joined as a designer who built and shipped the site myself. Now I manage designers and the managers who lead them.</p>
+        <p data-i18n-html="workP2">Before Stripe, I was the lead web and brand designer at <a href="https://www.mapbox.com" data-card="mapbox">Mapbox</a>. I studied graphic design in Belgium, then went back to school to learn to code so I could build what I designed.</p>
+        <p data-i18n-html="workP3">I lead with empathy and trust. I hold a high bar for craft, and I measure it by what’s best for the people who use what we build. That means <a href="https://x.com/tatsvc/status/2017740440649535771" data-card="detailsTweet">obsessing over the details</a>, down to the smallest animation. I push my team to aim higher than they would on their own, and I take just as much responsibility for helping them get there.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="outside-heading">
+      <h2 id="outside-heading" data-i18n="outside">Life</h2>
+      <div class="prose">
+        <p data-i18n-html="outsideP1">Outside of work I’m in the mountains as much as I can: hiking, trail running, scrambling, skiing, backcountry skiing, and mountaineering, almost always with a camera. Much of my design work is <a href="https://x.com/tatsvc/status/2016926223365263403" data-card="natureTweet">inspired by the beauty of nature</a>.</p>
+        <p data-i18n-html="outsideP2">A lot of the people closest to me, I met through the mountains. I’m part of a <a href="../assets/glacier-gals.pdf" data-card="glacierGals">community of women climbers</a> where we plan trips together, share gear and skills, and learn from each other.</p>
+        <p data-i18n-html="outsideP3">I also volunteer with <a href="https://www.mountaineers.org" data-card="mountaineers">The Mountaineers</a>, where I help instruct the crevasse rescue course.</p>
+
+        <figure class="inline-photo">
+          <img src="../assets/photos/crevasse-400.jpg"
+               srcset="../assets/photos/crevasse-400.jpg 399w, ../assets/photos/crevasse-768.jpg 768w"
+               sizes="16rem" width="768" height="1024" loading="lazy" decoding="async"
+               alt="Tatiana in a white helmet and orange jacket, handling ropes at the edge of a crevasse on Mount Baker"
+               data-i18n-alt="crevasseAlt">
+          <figcaption data-i18n="crevasseCaption">Crevasse rescue on Mount Baker</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" data-i18n="contact">Contact</h2>
+      <ul class="inline">
+        <li><a href="mailto:tatiana.van.campenhout@gmail.com">tatiana.van.campenhout@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/zatiana" data-card="instagram">Instagram</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="wrap footer muted">
+    <p>© 2026</p>
+  </footer>
+</body>
+</html>
