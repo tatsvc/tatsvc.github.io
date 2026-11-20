@@ -625,11 +625,14 @@
         if (floating) {
           topbar.classList.add('is-shown');
         } else {
-          // Start from the hidden state, then slide in on the next frame
+          // Jump to the hidden spot without animating, then slide in from there
+          topbar.style.transition = 'none';
           topbar.classList.add('is-floating');
-          requestAnimationFrame(() => requestAnimationFrame(() => {
+          topbar.getBoundingClientRect();
+          topbar.style.transition = '';
+          requestAnimationFrame(() => {
             if (topbar.classList.contains('is-floating')) topbar.classList.add('is-shown');
-          }));
+          });
         }
       } else if (!past && floating && topbar.classList.contains('is-shown')) {
         topbar.classList.remove('is-shown');
