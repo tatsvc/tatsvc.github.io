@@ -578,7 +578,7 @@
     clearTimeout(hideTimer);
     clearTimeout(showTimer);
     // Quick to open the first time, instant when moving between links
-    showTimer = setTimeout(() => showCard(trigger), openCard ? 0 : 170);
+    showTimer = setTimeout(() => showCard(trigger), openCard ? 0 : 110);
   });
 
   document.addEventListener('mouseout', (event) => {
