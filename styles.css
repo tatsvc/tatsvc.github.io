@@ -830,8 +830,18 @@ html:has(.sheet[open]) {
   width: 13rem;
 }
 
+/* Just the photo: no outline ring, no divider under the image */
 .hovercard--photo {
   cursor: default;
+  box-shadow:
+    0 1px 1px rgb(20 50 110 / 0.03),
+    0 2px 4px -1px rgb(20 50 110 / 0.03),
+    0 12px 24px -8px rgb(30 64 140 / 0.04),
+    0 24px 48px -12px rgb(40 80 170 / 0.06);
+}
+
+.hovercard--photo .hovercard__media {
+  border-bottom: 0;
 }
 
 .hovercard--photo .hovercard__media,
