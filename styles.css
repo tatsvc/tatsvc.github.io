@@ -507,6 +507,130 @@ main {
   color: var(--ink);
 }
 
+/* Bottom sheet (phones and tablets): the hover card, shown in a <dialog>
+   that slides up from the bottom of the screen */
+.sheet {
+  position: fixed;
+  inset: auto 0 0;
+  width: 100%;
+  max-width: 32rem;
+  max-height: 88vh;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 18px 18px 0 0;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 -8px 32px -12px rgb(30 64 140 / 0.18);
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+@starting-style {
+  .sheet[open] {
+    transform: translateY(100%);
+  }
+}
+
+.sheet::backdrop {
+  background: rgb(6 27 49 / 0.32);
+}
+
+/* No page scrolling behind the open sheet */
+html:has(.sheet[open]) {
+  overflow: hidden;
+}
+
+.sheet__inner {
+  position: relative;
+  padding: 0.6rem 1rem calc(1rem + env(safe-area-inset-bottom));
+}
+
+.sheet__handle {
+  width: 2.25rem;
+  height: 4px;
+  margin: 0 auto 0.75rem;
+  border-radius: 999px;
+  background: var(--rule);
+}
+
+.sheet__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(6 27 49 / 0.06);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* The card itself, unboxed: full width, no shadow, nothing hidden */
+.hovercard.hovercard--sheet {
+  position: static;
+  width: auto;
+  max-width: none;
+  margin-top: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgb(20 50 110 / 0.07);
+  opacity: 1;
+  transform: none;
+  transition: none;
+  cursor: auto;
+}
+
+.hovercard--sheet .hovercard__media {
+  max-height: 45vh;
+}
+
+/* Portrait photos (the cats, the magazine cover) are shown whole */
+.hovercard--sheet.hovercard--photo .hovercard__media,
+.hovercard--sheet.hovercard--cover .hovercard__media {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 55vh;
+  margin-inline: auto;
+}
+
+.hovercard--sheet.hovercard--photo {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.hovercard--sheet.hovercard--photo .hovercard__media {
+  display: block;
+}
+
+.hovercard--sheet.hovercard--post .hovercard__text {
+  display: block;
+  -webkit-line-clamp: unset;
+}
+
+.hovercard--sheet .hovercard__cta {
+  display: none; /* the button below the card does this */
+}
+
+.sheet__cta {
+  display: block;
+  margin-top: 0.875rem;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+}
+
 /* Paw prints from Marmot and Jade (main.js): each one pops in, then fades */
 .paw {
   position: absolute;

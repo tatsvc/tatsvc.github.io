@@ -404,8 +404,8 @@
   };
 
   const CARD_UI = {
-    en: { viewOnX: 'View on X', visit: 'Visit' },
-    nl: { viewOnX: 'Bekijk op X', visit: 'Bekijk' },
+    en: { viewOnX: 'View on X', open: 'Open link', close: 'Close' },
+    nl: { viewOnX: 'Bekijk op X', open: 'Link openen', close: 'Sluiten' },
   };
 
   function el(tag, className, text) {
@@ -600,6 +600,69 @@
     if (event.key === 'Escape') hideCard();
   });
   window.addEventListener('resize', () => hideCard(true));
+
+
+  /* ------------------------------------------------------------------------
+     Bottom sheet: on phones and tablets (no hover), tapping a link with a
+     card opens the same card in a sheet from the bottom of the screen, with
+     a button to follow the link. A <dialog>, so focus, Escape and screen
+     readers are handled by the browser.
+     ------------------------------------------------------------------------ */
+
+  let sheet = null;
+
+  function openSheet(trigger) {
+    const key = trigger.dataset.card;
+    const ui = CARD_UI[currentLang];
+
+    if (!sheet) {
+      sheet = el('dialog', 'sheet');
+      // Tapping the dimmed backdrop closes it (the click lands on the
+      // <dialog> itself, not on its contents)
+      sheet.addEventListener('click', (event) => {
+        if (event.target === sheet) sheet.close();
+      });
+      sheet.addEventListener('close', () => {
+        const video = sheet.querySelector('video');
+        if (video) video.pause();
+      });
+      document.body.append(sheet);
+    }
+
+    const inner = el('div', 'sheet__inner');
+    const close = el('button', 'sheet__close');
+    close.type = 'button';
+    close.setAttribute('aria-label', ui.close);
+    close.innerHTML = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3.5 3.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+    close.addEventListener('click', () => sheet.close());
+
+    const card = buildCard(key, currentLang);
+    card.removeAttribute('aria-hidden'); // in the sheet, the card is the content
+    card.classList.add('hovercard--sheet');
+    inner.append(el('div', 'sheet__handle'), close, card);
+
+    if (trigger.href) {
+      const cta = el('a', 'sheet__cta', (CARDS[key].type === 'post' ? ui.viewOnX : ui.open) + ' ↗');
+      cta.href = trigger.href;
+      inner.append(cta);
+    }
+
+    sheet.replaceChildren(inner);
+    sheet.setAttribute('aria-label', trigger.textContent.trim());
+    sheet.showModal();
+    close.focus();
+
+    const video = sheet.querySelector('video');
+    if (video && !reduceMotion.matches) video.play().catch(() => {});
+  }
+
+  document.addEventListener('click', (event) => {
+    if (canHover.matches || event.metaKey || event.ctrlKey) return;
+    const trigger = triggerFrom(event);
+    if (!trigger) return;
+    event.preventDefault();
+    openSheet(trigger);
+  });
 
 
   /* ------------------------------------------------------------------------
