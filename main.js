@@ -603,36 +603,35 @@
 
 
   /* ------------------------------------------------------------------------
-     Top bar: once you've scrolled past it, it floats back in when you scroll
-     up and tucks away when you scroll down. Small movements are ignored, so
-     it doesn't flicker.
+     Top bar: once you've scrolled halfway past the first photo, the links
+     and the toggle float along in a frosted-glass bar. Scroll back above
+     that point and the bar fades away, leaving them in the page again.
      ------------------------------------------------------------------------ */
 
   const topbar = document.querySelector('.topbar');
-  if (topbar) {
-    let lastY = window.scrollY;
+  const firstPhoto = document.querySelector('.hero img, .portrait');
+  if (topbar && firstPhoto) {
     let ticking = false;
+    let leaveTimer;
 
     const update = () => {
       ticking = false;
-      const y = Math.max(0, window.scrollY);
-      const height = topbar.offsetHeight;
+      const rect = firstPhoto.getBoundingClientRect();
+      const past = rect.top + rect.height / 2 < 0;
+      const floating = topbar.classList.contains('is-floating');
 
-      if (y <= 0) {
-        // Back at the top: the bar sits in the page again
-        topbar.classList.remove('is-floating', 'is-shown');
-      } else if (y > height * 2) {
-        if (!topbar.classList.contains('is-floating')) {
+      if (past && !topbar.classList.contains('is-shown')) {
+        clearTimeout(leaveTimer);
+        if (!floating) {
           topbar.classList.add('is-floating');
-          topbar.getBoundingClientRect(); // start hidden, so it slides in
+          topbar.getBoundingClientRect(); // start from the hidden state
         }
-        if (y < lastY - 6) topbar.classList.add('is-shown');
-        else if (y > lastY + 6) topbar.classList.remove('is-shown');
-        else return; // too small to count; keep lastY as the reference
-      } else if (!topbar.classList.contains('is-shown')) {
-        topbar.classList.remove('is-floating');
+        topbar.classList.add('is-shown');
+      } else if (!past && floating && topbar.classList.contains('is-shown')) {
+        topbar.classList.remove('is-shown');
+        // After the fade, put the links back in the page
+        leaveTimer = setTimeout(() => topbar.classList.remove('is-floating'), 300);
       }
-      lastY = y;
     };
 
     window.addEventListener('scroll', () => {
@@ -641,9 +640,7 @@
         requestAnimationFrame(update);
       }
     }, { passive: true });
-
-    // Tabbing into the bar always brings it into view
-    topbar.addEventListener('focusin', () => topbar.classList.add('is-shown'));
+    update();
   }
 
 
