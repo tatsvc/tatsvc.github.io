@@ -622,15 +622,19 @@
 
       if (past && !topbar.classList.contains('is-shown')) {
         clearTimeout(leaveTimer);
-        if (!floating) {
+        if (floating) {
+          topbar.classList.add('is-shown');
+        } else {
+          // Start from the hidden state, then slide in on the next frame
           topbar.classList.add('is-floating');
-          topbar.getBoundingClientRect(); // start from the hidden state
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            if (topbar.classList.contains('is-floating')) topbar.classList.add('is-shown');
+          }));
         }
-        topbar.classList.add('is-shown');
       } else if (!past && floating && topbar.classList.contains('is-shown')) {
         topbar.classList.remove('is-shown');
         // After the fade, put the links back in the page
-        leaveTimer = setTimeout(() => topbar.classList.remove('is-floating'), 500);
+        leaveTimer = setTimeout(() => topbar.classList.remove('is-floating'), 600);
       }
     };
 

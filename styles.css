@@ -483,24 +483,27 @@ main {
   -webkit-backdrop-filter: blur(16px) saturate(1.6);
   backdrop-filter: blur(16px) saturate(1.6);
   box-shadow: 0 1px 0 rgb(20 50 110 / 0.07);
-  opacity: 0;
+  /* Only slides, no fade: Safari pops the blur in at the end of a fade */
   transform: translateY(-100%);
   pointer-events: none;
-  transition:
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.35s ease;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .topbar.is-floating.is-shown {
-  opacity: 1;
   transform: none;
   pointer-events: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .topbar.is-floating {
+    opacity: 0;
     transform: none;
     transition: opacity 0.2s ease;
+  }
+
+  .topbar.is-floating.is-shown {
+    opacity: 1;
   }
 }
 
