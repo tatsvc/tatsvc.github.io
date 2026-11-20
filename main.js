@@ -634,6 +634,14 @@
             if (topbar.classList.contains('is-floating')) topbar.classList.add('is-shown');
           });
         }
+      } else if (floating && window.scrollY < topbar.offsetHeight) {
+        // Its spot at the top of the page is in view: put it straight back
+        // there, so it's never missing or sliding in up there
+        clearTimeout(leaveTimer);
+        topbar.style.transition = 'none';
+        topbar.classList.remove('is-floating', 'is-shown');
+        topbar.getBoundingClientRect();
+        topbar.style.transition = '';
       } else if (!past && floating && topbar.classList.contains('is-shown')) {
         topbar.classList.remove('is-shown');
         // After the fade, put the links back in the page
