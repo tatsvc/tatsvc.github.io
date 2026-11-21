@@ -214,10 +214,17 @@ a:hover {
   color: var(--muted);
 }
 
+/* Sits just above the first section's rule, in line with the text column */
 .footnote {
-  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   font-size: 0.8125rem;
   color: var(--muted);
+}
+
+@media (min-width: 48em) {
+  .footnote {
+    padding-left: 12rem;
+  }
 }
 
 .footnote span[aria-hidden] {
