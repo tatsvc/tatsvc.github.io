@@ -211,7 +211,6 @@ a:hover {
   font-size: 0.5em;
   vertical-align: 0.9em;
   line-height: 0;
-  color: var(--muted);
 }
 
 /* Sits just above the first section's rule, in line with the text column */
