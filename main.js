@@ -66,6 +66,7 @@
       // about/index.html
       aboutTitle: 'About · Tatiana Van Campenhout',
       aboutHeading: 'Hi, I’m Tatiana',
+      nickname: 'But people call me Tats.',
       aboutLede: 'A Belgian designer living in Seattle with <span class="card-hint" data-card="cats">Marmot and Jade</span>, my two beloved cats.',
       portraitAlt: 'Tatiana in a white beanie and round sunglasses, holding pink skis on a snowy summit',
       workP1: 'I’ve been at Stripe for nine years and lead web presence, which means the team behind <a href="https://stripe.com" data-card="stripe">stripe.com</a>. I joined as a designer who built and shipped the site myself. Now I manage designers and the managers who lead them.',
@@ -137,6 +138,7 @@
       // about/index.html
       aboutTitle: 'Over mij · Tatiana Van Campenhout',
       aboutHeading: 'Hallo, ik ben Tatiana',
+      nickname: 'Maar iedereen zegt Tats.',
       // "Geraken" (workP3) is Flemish; NL would say "komen".
       aboutLede: 'Een Belgische designer in Seattle, met <span class="card-hint" data-card="cats">Marmot en Jade</span>, mijn twee geliefde katten.',
       portraitAlt: 'Tatiana met een witte muts en ronde zonnebril, met roze ski’s op een besneeuwde top',

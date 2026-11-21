@@ -205,6 +205,25 @@ a:hover {
   }
 }
 
+/* "Hi, I'm Tatiana*" and its footnote: "*But people call me Tats." */
+.footnote-mark {
+  margin-left: 0.04em;
+  font-size: 0.5em;
+  vertical-align: 0.9em;
+  line-height: 0;
+  color: var(--muted);
+}
+
+.footnote {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.footnote span[aria-hidden] {
+  margin-right: 0.15em;
+}
+
 .lede {
   max-width: 34rem;
   font-size: 1.125rem;
