@@ -49,7 +49,7 @@
       education: 'Education',
       eduGraphic: 'Bachelor’s in Graphic Design',
       eduMaster: 'Master’s in Multimedia Design',
-      eduBachelor: 'Bachelor’s in Development & Design',
+      eduBachelor: 'Additional Bachelor’s in Development & Design',
       belgium: 'Belgium',
 
       make: 'Things I make',
@@ -121,7 +121,7 @@
       education: 'Studies',
       eduGraphic: 'Bachelor grafisch ontwerp',
       eduMaster: 'Master multimediaontwerp',
-      eduBachelor: 'Bachelor in Development & Design',
+      eduBachelor: 'Aanvullende bachelor in Development & Design',
       belgium: 'België',
 
       make: 'Wat ik maak',
