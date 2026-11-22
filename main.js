@@ -47,7 +47,8 @@
       roleMapbox: 'Design Lead, Web & Brand',
       roleIntern: 'Design Intern',
       education: 'Education',
-      eduMaster: 'Master’s in Graphic Design',
+      eduGraphic: 'Bachelor’s in Graphic Design',
+      eduMaster: 'Master’s in Multimedia Design',
       eduBachelor: 'Bachelor’s in Development & Design',
       belgium: 'Belgium',
 
@@ -118,7 +119,8 @@
       roleMapbox: 'Design Lead, Web & Brand',
       roleIntern: 'Design Intern',
       education: 'Studies',
-      eduMaster: 'Master in het grafisch ontwerp',
+      eduGraphic: 'Bachelor grafisch ontwerp',
+      eduMaster: 'Master multimediaontwerp',
       eduBachelor: 'Bachelor in Development & Design',
       belgium: 'België',
 
